@@ -1,6 +1,8 @@
 
 ![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/kitconcept.png)
 
+![Volto Form Builder](https://github.com/kitconcept/volto-form-builder/workflows/Volto%20Form%20Builder/badge.svg)
+
 # Volto Form Builder
 
 Volto Form Builder allows editors to create forms in Volto.
