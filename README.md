@@ -1,41 +1,38 @@
-# Volto project with addons example
 
-This is a Volto project (using Volto 5.x.x) that shows how to deal with addons as
-released packages (ie. released in an npm registry) or locally while developing them.
+![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/kitconcept.png)
 
-## Branches
+# Volto Form Builder
 
-Two branches are provided in this repo:
+Volto Form Builder allows editors to create forms in Volto.
 
-- usingreleasedpackage
-- usingmrsdeveloper
+# Features
 
-## Example package
+## Basics
 
-Both use an example package `volto-testaddon`, which is released:
-https://www.npmjs.com/package/volto-testaddon
+- As editor, I can add a form
+- As editor, I can add a single-line text field to a form
+- As editor, I can add a multi-line text field to a form
+- As editor, I can add an email field to a form
+- As editor, I can add a RichText field to a form
 
-and you can find it on github:
-https://github.com/sneridagh/volto-testaddon
+## Additional Fields
 
-It features a view `DummyView` that this project will use to override the `Document` View.
+- As editor, I can add a hidden text field to a form
+- As editor, I can add a boolean field to a form
+- As editor, I can add a checkbox field to a form
+- As editor, I can add a select field to a form
+- As editor, I can add an integer field to a form
 
-## Trying it out (both branches)
+## Misc
+- As editor, I can mark a form field as required
+- As editor, I can add plain text to a form
+- As editor, I can edit the text and links of the submit/cancel buttons of a form
+- As editor, I can add a regexp validation to a form field
+Form Actions
+- As editor, I can add a send-email action to a form
+- As editor, I can store submitted form data as CSV
 
-Install deps:
-`yarn`
+## Form View
 
-start the project:
-`yarn start`
+- As anonymous user, I can see and submit a form
 
-## Setup your own project
-
-Take a look at the changes for how to setup your project to work with add-ons.
-
-### Using a released package
-
-https://github.com/collective/volto-example-project-addons/pull/1
-
-### Using mrs-developer
-
-https://github.com/collective/volto-example-project-addons/pull/2
