@@ -1,0 +1,22 @@
+{
+  "name": "volto-form-builder",
+  "version": "1.0.0",
+  "description": "\"This is a addon for volto\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iFlameing/volto-form-builder.git"
+  },
+  "keywords": [
+    "Volto"
+  ],
+  "author": "Alok Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iFlameing/volto-form-builder/issues"
+  },
+  "homepage": "https://github.com/iFlameing/volto-form-builder#readme"
+}
