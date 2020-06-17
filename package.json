@@ -23,7 +23,16 @@
     "lint": "./node_modules/eslint/bin/eslint.js --max-warnings=0 'src/**/*.{js,jsx,json}'",
     "lint:fix": "./node_modules/eslint/bin/eslint.js --fix 'src/**/*.{js,jsx,json}'",
     "i18n": "rm -rf build/messages && NODE_ENV=production node src/i18n.js",
-    "code-analysis:i18n": "yarn i18n && git diff -G'^[^\"POT]' --exit-code"
+    "code-analysis:i18n": "yarn i18n && git diff -G'^[^\"POT]' --exit-code",
+    "cypress:open": "CYPRESS_API=plone cypress open",
+    "cypress:run": "CYPRESS_API=plone CYPRESS_RETRIES=2 cypress run",
+    "cy:install": "cypress install",
+    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
+    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
+    "ci:start-api-plone": "make test-acceptance-server",
+    "ci:start-api-guillotina": "make test-acceptance-guillotina",
+    "ci:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn build && start-test start:prod http-get://localhost:3000 cypress:run",
+    "ci:cypress:run": "start-test ci:start-api-plone http-get://localhost:55001/plone ci:start-frontend"
   },
   "jest": {
     "modulePathIgnorePatterns": [
@@ -41,6 +50,7 @@
       "/node_modules/(?!@plone/volto).+\\.js$"
     ],
     "moduleNameMapper": {
+      "@plone/volto/cypress": "<rootDir>/node_modules/@plone/volto/cypress",
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
@@ -100,7 +110,8 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "plone/volto#master"
+    "@plone/volto": "plone/volto#master",
+    "cypress": "4.8.0"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",

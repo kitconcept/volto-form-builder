@@ -23,11 +23,43 @@ build:  ## Build
 
 .PHONY: Build Backend
 build-backend:  ## Build Backend
-	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" -e PROFILES="kitconcept.volto:default-homepage" plone
+	(cd api && python3 -m venv .)
+	(cd api && bin/pip install -r requirements.txt)
+	(cd api && bin/buildout)
+
+# .PHONY: Build Backend
+# build-backend:  ## Build Backend
+# 	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" -e PROFILES="kitconcept.volto:default-homepage" plone
 
 .PHONY: Build Frontend
 build-frontend:  ## Build Frontend
 	yarn install
+
+test-acceptance-server:
+	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+
+start-frontend: dist
+	yarn start:prod
+
+.PHONY: start-test-backend
+start-test-backend: ## Start Test Plone Backend
+	@echo "$(GREEN)==> Start Test Plone Backend$(RESET)"
+	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+
+.PHONY: start-test-frontend
+start-test-frontend: ## Start Test Volto Frontend
+	@echo "$(GREEN)==> Start Test Volto Frontend$(RESET)"
+	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && NODE_ENV=production node build/server.js
+
+.PHONY: start-test
+start-test: ## Start Test
+	@echo "$(GREEN)==> Start Test$(RESET)"
+	yarn cypress:open
+
+.PHONY: start-test-all
+start-test-all: ## Start Test
+	@echo "$(GREEN)==> Start Test$(RESET)"
+	yarn ci:cypress:run
 
 .PHONY: Clean
 clean:  ## Clean
