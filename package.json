@@ -54,8 +54,14 @@
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
+      "volto-form-builder/(.*)$": "<rootDir>/src/addons/volto-form-builder/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
     },
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "!**/src/addons/**/*"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 10,
@@ -110,7 +116,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "plone/volto#master"
+    "@plone/volto": "6.2.0"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",

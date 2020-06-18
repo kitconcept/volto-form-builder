@@ -1638,9 +1638,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@plone/volto@plone/volto#master":
+"@plone/volto@6.2.0":
   version "6.2.0"
-  resolved "https://codeload.github.com/plone/volto/tar.gz/da3adbafb7de6cec3233a3d94db597fa172b7e69"
+  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-6.2.0.tgz#559f237906a1559931f46248bd0ea2df9d8789fe"
+  integrity sha512-/avIp3wjGxtKH7RC9Aqsu9Huiln92Sy42XzNvZZukCYGLRZpLy4eFkUHRkrzdYzshbwdi99PuwZ2Q5LNl3vd+w==
   dependencies:
     "@babel/core" "7.9.6"
     "@babel/plugin-proposal-decorators" "7.8.3"

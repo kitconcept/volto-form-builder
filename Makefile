@@ -33,10 +33,14 @@ build-backend:  ## Build Backend
 
 .PHONY: Build Frontend
 build-frontend:  ## Build Frontend
-	yarn install
+	yarn && RAZZLE_API_PATH=http://localhost:55001/plone yarn build
 
 test-acceptance-server:
 	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+
+dist:
+	yarn
+	yarn build
 
 start-frontend: dist
 	yarn start:prod
