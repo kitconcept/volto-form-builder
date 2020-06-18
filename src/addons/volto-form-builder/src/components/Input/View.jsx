@@ -6,7 +6,7 @@ const InputView = (props) => {
   const [input, setInput] = useState('');
   const onChange = (id, value) => {
     setInput(value);
-    props.onChange(props.data.input, value);
+    // props.onChange(props.data.input, value);
   };
   return (
     <Form>

@@ -12,6 +12,10 @@ const messages = defineMessages({
     id: 'Required',
     defaultMessage: 'Required',
   },
+  placeholder: {
+    id: 'Placeholder',
+    defaultMessage: 'Placeholder',
+  },
 });
 
 const InputSidebar = (props) => {
@@ -33,6 +37,19 @@ const InputSidebar = (props) => {
             props.onChangeBlock(props.block, {
               ...props.data,
               input: v,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.placeholder)}
+          value={props.data.placeholder}
+          onChange={(e, v) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              placeholder: v,
             });
           }}
         />
