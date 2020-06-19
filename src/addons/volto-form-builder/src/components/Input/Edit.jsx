@@ -15,7 +15,7 @@ const InputEdit = (props) => {
               : 'enter input label'
           }
           required={props.data.required}
-          value=""
+          value={props.data.placeholder}
           onChange={() => {}}
           wrapped
         />

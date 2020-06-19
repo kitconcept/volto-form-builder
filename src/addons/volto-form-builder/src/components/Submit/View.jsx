@@ -20,7 +20,8 @@ const SubmitView = (props) => {
         <Button
           primary
           className="submit-block-button view"
-          onClick={() => props.onSubmit(props.data.email)}
+          // onClick={() => props.onSubmit(props.data.email)}
+          // this is not possible currrently
         >
           {props.data.submit}
         </Button>

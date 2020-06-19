@@ -5,7 +5,7 @@ import { Form } from 'semantic-ui-react';
 const TextareaView = (props) => {
   const [textarea, setTextarea] = useState('');
   const onChange = (id, value) => {
-    props.onChange(props.data.textarea, value);
+    // props.onChange(props.data.textarea, value);
     setTextarea(value);
   };
   return (
