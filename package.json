@@ -1,9 +1,9 @@
 {
-  "name": "volto-starter-kit",
-  "description": "Volto Starter Kit",
+  "name": "volto-form-builder",
+  "description": "Form builder for Volto",
   "license": "MIT",
   "version": "6.2.0",
-  "private": true,
+  "private": false,
   "workspaces": [
     "src/addons/volto-form-builder"
   ],
