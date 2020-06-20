@@ -67,22 +67,22 @@ jobs:
         env:
           CI: true
 
-      # # Run Cypress tests
-      # - name: Cypress acceptance tests
-      #   run: yarn ci:cypress:run
+      # Run Cypress tests
+      - name: Cypress acceptance tests
+        run: yarn ci:cypress:run
 
-      # # Upload Cypress screenshots
-      # - uses: actions/upload-artifact@v1
-      #   if: failure()
-      #   with:
-      #     name: cypress-screenshots
-      #     path: cypress/screenshots
-      # # Upload Cypress videos
-      # - uses: actions/upload-artifact@v1
-      #   if: always()
-      #   with:
-      #     name: cypress-videos
-      #     path: cypress/videos
+      # Upload Cypress screenshots
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      # Upload Cypress videos
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
 
       # Bundlewatch
       # - uses: jackyef/bundlewatch-gh-action@master
