@@ -17,6 +17,7 @@ import {
   views as defaultViews,
   widgets as defaultWidgets,
   blocks as defaultBlocks,
+  addonReducers as defaultAddonReducers,
 } from '@plone/volto/config';
 
 export const settings = {
@@ -35,4 +36,4 @@ export const blocks = {
 };
 
 export const addonRoutes = [];
-export const addonReducers = {};
+export const addonReducers = { ...defaultAddonReducers };

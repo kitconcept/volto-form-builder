@@ -8,6 +8,7 @@ import {
   SubmitEdit,
   SubmitView,
 } from './components';
+import { formbuilder } from './reducers';
 
 export default function applyConfig(config) {
   const FormBlock = {
@@ -67,6 +68,11 @@ export default function applyConfig(config) {
     ...config.blocks,
     groupBlocksOrder,
     blocksConfig: { ...config.blocks.blocksConfig, ...FormBlock },
+  };
+
+  config.addonReducers = {
+    ...config.addonReducers,
+    formbuilder,
   };
 
   return config;
