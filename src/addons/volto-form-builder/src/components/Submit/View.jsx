@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Button } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 // Required for email sending
 // import { toast } from 'react-toastify';
@@ -14,8 +15,16 @@ const SubmitView = (props) => {
   // useEffect(() => {
   //   toast.success(<Toast success title="Success" content="Email Sent" />);
   // }, [loaded]);
+  const values = props.formbuilder[props.path] || {};
   return (
     <>
+      <ul>
+        {Object.keys(values).map((k) => (
+          <li>
+            {k} - {values[k]}
+          </li>
+        ))}
+      </ul>
       <div>
         <Button
           primary
@@ -30,4 +39,8 @@ const SubmitView = (props) => {
   );
 };
 
-export default SubmitView;
+export default connect((state, props) => {
+  return {
+    formbuilder: state.formbuilder,
+  };
+})(SubmitView);

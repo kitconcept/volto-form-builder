@@ -23,3 +23,5 @@ api/parts/
 api/pyvenv.cfg
 api/src/
 api/var/
+
+*~

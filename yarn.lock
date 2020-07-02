@@ -1542,9 +1542,9 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@plone/volto@plone/volto#master":
-  version "6.2.0"
-  resolved "https://codeload.github.com/plone/volto/tar.gz/da3adbafb7de6cec3233a3d94db597fa172b7e69"
+"@plone/volto@plone/volto#load_addons_1531":
+  version "6.3.0"
+  resolved "https://codeload.github.com/plone/volto/tar.gz/c4900bee9487033573ca5eafbf5f873b95c314c0"
   dependencies:
     "@babel/core" "7.9.6"
     "@babel/plugin-proposal-decorators" "7.8.3"
