@@ -1,8 +1,8 @@
 {
-  "name": "volto-starter-kit",
-  "description": "Volto Starter Kit",
+  "name": "volto-form-builder",
+  "description": "Form builder for Volto",
   "license": "MIT",
-  "version": "6.2.0",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "src/addons/volto-form-builder"
@@ -116,7 +116,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "6.2.0"
+    "@plone/volto": "plone/volto#load_addons_1531"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.3",

@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iFlameing/volto-form-builder.git"
+    "url": "git+https://github.com/kitconcept/volto-form-builder.git"
   },
   "keywords": [
     "Volto"
   ],
   "author": "Alok Kumar",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iFlameing/volto-form-builder/issues"
+    "url": "https://github.com/kitconcept/volto-form-builder/issues"
   },
-  "homepage": "https://github.com/iFlameing/volto-form-builder#readme"
+  "homepage": "https://github.com/kitconcept/volto-form-builder#readme"
 }

@@ -45,25 +45,12 @@ const SubmitSidebar = (props) => {
         <TextWidget
           id="external"
           title={props.intl.formatMessage(messages.email)}
-          required={props.data.required ? true : false}
+          required={true}
           value={value}
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
               email: v,
-            });
-          }}
-        />
-      </Segment>
-      <Segment className="form sidebar-image-data">
-        <CheckboxWidget
-          id="external"
-          title={props.intl.formatMessage(messages.required)}
-          value={props.data.required}
-          onChange={(e, v) => {
-            props.onChangeBlock(props.block, {
-              ...props.data,
-              required: v,
             });
           }}
         />

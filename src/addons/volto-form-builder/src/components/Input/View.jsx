@@ -1,26 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextWidget } from '@plone/volto/components';
 import { Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { setFormbuilderInputValue } from '../../actions';
 
-const InputView = (props) => {
-  const [input, setInput] = useState('');
-  const onChange = (id, value) => {
-    setInput(value);
-    props.onChange(props.data.input, value);
-  };
+const InputView = ({
+  data,
+  formbuilder,
+  id,
+  path,
+  setFormbuilderInputValue,
+  block,
+  ...rest
+}) => {
+  const blockid = id;
+
   return (
     <Form>
       <TextWidget
         id="input-form-view"
-        title={
-          props.data.input?.length > 0 ? props.data.input : 'enter input label'
-        }
-        required={props.data.required}
-        value={input}
-        onChange={onChange}
+        title={data.input?.length > 0 ? data.input : 'enter input label'}
+        required={data.required}
+        value={formbuilder[path]?.[blockid] || ''}
+        onChange={(id, value) => setFormbuilderInputValue(path, blockid, value)}
       />
     </Form>
   );
 };
 
-export default InputView;
+export default connect(
+  (state, props) => {
+    return {
+      formbuilder: state.formbuilder,
+    };
+  },
+  {
+    setFormbuilderInputValue,
+  },
+)(InputView);
