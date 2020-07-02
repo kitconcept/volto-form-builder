@@ -24,28 +24,6 @@ build:  ## Build
 	make build-backend
 	make build-frontend
 
-.PHONY: build-frontend
-build-frontend:  ## Build React Frontend
-	@echo "Build Frontend"
-	yarn
-	yarn build
-
-.PHONY: start-frontend
-start-frontend:  ## Start React Frontend
-	@echo "Start Frontend"
-	yarn start
-
-api/bin/pip:
-	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	(cd api && python3 -m venv .)
-#	(cd api && bin/pip install pip --upgrade)
-
-.PHONY: build-backend
-build-backend: api/bin/pip ## Create virtualenv and run buildout
-	@echo "$(GREEN)==> Setup Build$(RESET)"
-	(cd api && bin/pip install -r requirements.txt --upgrade)
-	(cd api && bin/buildout)
-
 .PHONY: clean
 clean: ## Remove old virtualenv and creates a new one
 	@echo "$(RED)==> Cleaning environment and build$(RESET)"
@@ -83,10 +61,6 @@ build-backend:  ## Build Backend
 	(cd api && bin/pip install -r requirements.txt)
 	(cd api && bin/buildout)
 
-# .PHONY: Build Backend
-# build-backend:  ## Build Backend
-# 	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="kitconcept.volto" -e ZCML="kitconcept.volto.cors" -e PROFILES="kitconcept.volto:default-homepage" plone
-
 .PHONY: Build Frontend
 build-frontend:  ## Build Frontend
 	yarn && RAZZLE_API_PATH=http://localhost:55001/plone yarn build
@@ -106,11 +80,6 @@ start-test-backend: ## Start Test Plone Backend
 	@echo "$(GREEN)==> Start Test Plone Backend$(RESET)"
 	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,kitconcept.volto:default-homepage ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
 
-.PHONY: start-test-frontend
-start-test-frontend: ## Start Test Volto Frontend
-	@echo "$(GREEN)==> Start Test Volto Frontend$(RESET)"
-	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && NODE_ENV=production node build/server.js
-
 .PHONY: start-test
 start-test: ## Start Test
 	@echo "$(GREEN)==> Start Test$(RESET)"
@@ -125,8 +94,3 @@ start-test-all: ## Start Test
 start-test-frontend: ## Start Volto Test Frontend
 	@echo "$(GREEN)==> Start Volto Test Frontend$(RESET)"
 	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && NODE_ENV=production node build/server.js
-
-.PHONY: start-test
-start-test: ## Start Tests
-	@echo "$(GREEN)==> Start Test$(RESET)"
-	NODE_ENV=development yarn cypress open
