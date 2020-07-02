@@ -1,5 +1,5 @@
 {
-  "name": "@kitconcept/volto-form-builder",
+  "name": "volto-form-builder",
   "version": "1.0.0",
   "description": "\"This is a addon for volto\"",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "Volto"
   ],
   "author": "Alok Kumar",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kitconcept/volto-form-builder/issues"
   },
