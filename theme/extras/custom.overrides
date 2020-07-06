@@ -1,7 +1,0 @@
-.ui.primary.button.submit-block-button {
-  background-color: #e64e66;
-}
-
-.submit-block-button.view {
-  margin-top: 35px;
-}
