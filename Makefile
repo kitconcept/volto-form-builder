@@ -27,13 +27,13 @@ build:  ## Build
 .PHONY: build-frontend
 build-frontend:  ## Build React Frontend
 	@echo "Build Frontend"
-	yarn
-	yarn build
+	(cd demo && yarn)
+	(cd demo && yarn build)
 
 .PHONY: start-frontend
 start-frontend:  ## Start React Frontend
 	@echo "Start Frontend"
-	yarn start
+	(cd demo && yarn start)
 
 api/bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
@@ -65,7 +65,7 @@ test:
 .PHONY: test-frontend
 test-frontend: ## Run Frontend Tests
 	@echo "$(GREEN)==> Run Frontend Tests$(RESET)"
-	CI=true yarn test
+	(cd demo && CI=true yarn test)
 
 .PHONY: test-backend
 test-backend: ## Run Backend Tests
@@ -75,7 +75,7 @@ test-backend: ## Run Backend Tests
 .PHONY: test-acceptance
 test-acceptance: ## Run Acceptance Tests
 	@echo "$(GREEN)==> Run Acceptance Tests$(RESET)"
-	yarn ci:cypress:run
+	(cd demo && yarn ci:cypress:run)
 
 .PHONY: start-backend
 start-backend: ## Start Plone Backend
@@ -85,14 +85,14 @@ start-backend: ## Start Plone Backend
 .PHONY: start-test-backend
 start-test-backend: ## Start Plone Test Backend
 	@echo "$(GREEN)==> Start Plone Test Backend$(RESET)"
-	ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.app.multilingual,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.app.multilingual:default,kitconcept.volto:default ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING
+	(cd api && ZSERVER_PORT=55001 CONFIGURE_PACKAGES=plone.app.contenttypes,plone.app.multilingual,plone.restapi,kitconcept.volto,kitconcept.volto.cors APPLY_PROFILES=plone.app.contenttypes:plone-content,plone.restapi:default,plone.app.multilingual:default,kitconcept.volto:default ./api/bin/robot-server plone.app.robotframework.testing.PLONE_ROBOT_TESTING)
 
 .PHONY: start-test-frontend
 start-test-frontend: ## Start Volto Test Frontend
 	@echo "$(GREEN)==> Start Volto Test Frontend$(RESET)"
-	RAZZLE_API_PATH=http://localhost:55001/plone yarn build && NODE_ENV=production node build/server.js
+	(cd demo && RAZZLE_API_PATH=http://localhost:55001/plone yarn build && NODE_ENV=production node build/server.js)
 
 .PHONY: start-test
 start-test: ## Start Tests
 	@echo "$(GREEN)==> Start Test$(RESET)"
-	NODE_ENV=development yarn cypress open
+	(cd demo && NODE_ENV=development yarn cypress open)
