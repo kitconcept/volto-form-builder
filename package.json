@@ -1,5 +1,5 @@
 {
-  "name": "volto-form-builder",
+  "name": "@kitconcept/volto-form-builder",
   "version": "1.0.0",
   "description": "\"This is a addon for volto\"",
   "main": "index.js",
