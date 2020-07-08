@@ -1,0 +1,7 @@
+{
+  “volto-form-builder”: {
+    “package”: “@kitconcept/volto-form-builder”,
+    “url”: “git@github.com:kitconcept/volto-blocks.git”,
+    “path”: “src”
+  }
+}
