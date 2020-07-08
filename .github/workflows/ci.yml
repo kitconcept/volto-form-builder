@@ -80,8 +80,8 @@ jobs:
       - uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: demo/cypress-videos
-          path: cypress/videos
+          name: cypress-videos
+          path: demo/cypress/videos
 
       # Bundlewatch
       # - uses: jackyef/bundlewatch-gh-action@master
