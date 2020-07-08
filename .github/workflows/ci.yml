@@ -56,7 +56,7 @@ jobs:
       # python install
       - run: (cd demo/api && pip install virtualenv)
       - name: pip install
-        working-directory: api
+        working-directory: demo/api
         run: (cd demo/api && pip install -r requirements.txt)
       - name: buildout
         working-directory: api
