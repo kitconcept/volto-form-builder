@@ -30,7 +30,7 @@
     "cy:run": "cypress run",
     "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
     "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
-    "ci:start-backend": "(cd .. && make start-test-backend)",
+    "ci:start-backend": "make start-test-backend",
     "ci:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn build && start-test start:prod http-get://localhost:3000 cypress:run",
     "ci:cypress:run": "start-test ci:start-backend http-get://localhost:55001/plone ci:start-frontend"
   },
