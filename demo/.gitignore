@@ -4,6 +4,9 @@ logs
 npm-debug.log*
 .DS_Store
 
+demo/cypress/screenshots/
+demo/cypress/videos/
+
 coverage
 node_modules
 build
