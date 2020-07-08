@@ -1,4 +1,4 @@
-import formSVG from '@plone/volto/icons/form.svg';
+import formSVG from "@plone/volto/icons/form.svg";
 
 import {
   InputEdit,
@@ -7,16 +7,18 @@ import {
   TextareaView,
   SubmitEdit,
   SubmitView,
-} from './components';
-import { formbuilder } from './reducers';
+  EmailEdit,
+  EmailView,
+} from "./components";
+import { formbuilder } from "./reducers";
 
 export default function applyConfig(config) {
   const FormBlock = {
     inputBlock: {
-      id: 'inputBlock',
-      title: 'Input',
+      id: "inputBlock",
+      title: "Input",
       icon: formSVG,
-      group: 'form',
+      group: "form",
       view: InputView,
       edit: InputEdit,
       restricted: false,
@@ -28,10 +30,10 @@ export default function applyConfig(config) {
       },
     },
     textarea: {
-      id: 'textarea',
-      title: 'Textarea',
+      id: "textarea",
+      title: "Textarea",
       icon: formSVG,
-      group: 'form',
+      group: "form",
       view: TextareaView,
       edit: TextareaEdit,
       restricted: false,
@@ -43,10 +45,10 @@ export default function applyConfig(config) {
       },
     },
     submit: {
-      id: 'submit',
-      title: 'Submit',
+      id: "submit",
+      title: "Submit",
       icon: formSVG,
-      group: 'form',
+      group: "form",
       view: SubmitView,
       edit: SubmitEdit,
       restricted: false,
@@ -57,11 +59,26 @@ export default function applyConfig(config) {
         view: [],
       },
     },
+    email: {
+      id: "email",
+      title: "Email",
+      icon: formSVG,
+      group: "form",
+      view: EmailView,
+      edit: EmailEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 0,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
   };
 
   const groupBlocksOrder = [
     ...config.blocks.groupBlocksOrder,
-    { id: 'form', title: 'Form' },
+    { id: "form", title: "Form" },
   ];
 
   config.blocks = {
