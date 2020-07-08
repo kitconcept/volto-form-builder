@@ -25,5 +25,6 @@ demo/api/parts/
 demo/api/pyvenv.cfg
 demo/api/src/
 demo/api/var/
+demo/cypress/videos
 
 *~
