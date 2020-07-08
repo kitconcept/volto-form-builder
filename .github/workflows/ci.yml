@@ -75,12 +75,12 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: demo/cypress/screenshots
       # Upload Cypress videos
       - uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: cypress-videos
+          name: demo/cypress-videos
           path: cypress/videos
 
       # Bundlewatch
