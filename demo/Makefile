@@ -35,14 +35,10 @@ start-frontend:  ## Start React Frontend
 	@echo "Start Frontend"
 	yarn start
 
-api/bin/pip:
-	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	(cd api && python3 -m venv .)
-#	(cd api && bin/pip install pip --upgrade)
-
 .PHONY: build-backend
-build-backend: api/bin/pip ## Create virtualenv and run buildout
+build-backend:  ## Create virtualenv and run buildout
 	@echo "$(GREEN)==> Setup Build$(RESET)"
+	(cd api && python3 -m venv .)
 	(cd api && bin/pip install -r requirements.txt --upgrade)
 	(cd api && bin/buildout)
 
