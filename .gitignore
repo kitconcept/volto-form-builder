@@ -18,6 +18,7 @@ omelette
 
 demo/api/.installed.cfg
 demo/api/.mr.developer.cfg
+demo/api/pyvenv.cfg
 demo/api/bin/
 demo/api/lib/
 demo/api/parts/
