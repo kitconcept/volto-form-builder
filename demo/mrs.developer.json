@@ -1,6 +1,6 @@
 {
   "volto-form-builder": {
     "package": "@kitconcept/volto-form-builder",
-    "local": "../../"
+    "local": "../../src"
   }
 }
