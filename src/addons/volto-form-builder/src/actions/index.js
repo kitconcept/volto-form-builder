@@ -1,1 +1,0 @@
-export setFormbuilderInputValue from './formbuilder';

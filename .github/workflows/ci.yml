@@ -9,9 +9,6 @@ jobs:
         python-version: [3.7]
     steps:
       - uses: actions/checkout@v2
-      - name: debug
-        working-directory: api
-        run: ls -al
 
       # node setup
       - name: Use Node.js ${{ matrix.node-version }}
@@ -32,10 +29,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       # node install
-      - run: yarn install --frozen-lockfile
+      - run: (cd demo && yarn install --frozen-lockfile)
 
       # node code analysis
-      - run: yarn run prettier
+      - run: (cd demo && yarn run prettier)
       # - run: yarn run lint
       # - run: yarn run code-analysis:i18n
 
@@ -57,32 +54,34 @@ jobs:
             ${{ runner.os }}-pip-
 
       # python install
-      - run: pip install virtualenv
-      - name: pip install
-        working-directory: api
+      - name: install virtualenv
+        working-directory: demo/api
+        run: pip install virtualenv
+      - name: run pip install
+        working-directory: demo/api
         run: pip install -r requirements.txt
-      - name: buildout
-        working-directory: api
+      - name: run buildout
+        working-directory: demo/api
         run: buildout
         env:
           CI: true
 
       # Run Cypress tests
       - name: Cypress acceptance tests
-        run: yarn ci:cypress:run
+        run: (cd demo && yarn ci:cypress:run)
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: demo/cypress/screenshots
       # Upload Cypress videos
       - uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
-          path: cypress/videos
+          path: demo/cypress/videos
 
       # Bundlewatch
       # - uses: jackyef/bundlewatch-gh-action@master

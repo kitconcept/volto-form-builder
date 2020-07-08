@@ -31,6 +31,7 @@ export const views = {
 export const widgets = {
   ...defaultWidgets,
 };
+
 export const blocks = {
   ...defaultBlocks,
 };
