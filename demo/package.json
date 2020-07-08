@@ -111,7 +111,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "file:.yalc/@plone/volto",
+    "@plone/volto": "plone/volto#fix_namespace_packages",
     "mrs-developer": "1.4.0"
   },
   "devDependencies": {
