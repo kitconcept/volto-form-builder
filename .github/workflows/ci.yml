@@ -54,13 +54,13 @@ jobs:
             ${{ runner.os }}-pip-
 
       # python install
-      - run: pip install virtualenv
+      - run: (cd demo/api && pip install virtualenv)
       - name: pip install
         working-directory: api
-        run: pip install -r requirements.txt
+        run: (cd demo/api && pip install -r requirements.txt)
       - name: buildout
         working-directory: api
-        run: buildout
+        run: (cd demo/api && buildout)
         env:
           CI: true
 
