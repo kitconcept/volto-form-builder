@@ -9,6 +9,10 @@ import {
   SubmitView,
   EmailEdit,
   EmailView,
+  CheckboxEdit,
+  CheckboxView,
+  SelectEdit,
+  SelectView,
 } from "./components";
 import { formbuilder } from "./reducers";
 
@@ -69,6 +73,36 @@ export default function applyConfig(config) {
       restricted: false,
       mostUsed: false,
       sidebarTab: 0,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
+    checkbox: {
+      id: "checkbox",
+      title: "Checkbox",
+      icon: formSVG,
+      group: "form",
+      view: CheckboxView,
+      edit: CheckboxEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
+    select: {
+      id: "select",
+      title: "Select",
+      icon: formSVG,
+      group: "form",
+      view: SelectView,
+      edit: SelectEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 1,
       security: {
         addPermission: [],
         view: [],
