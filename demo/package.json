@@ -111,7 +111,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "plone/volto#fix_namespace_packages",
+    "@plone/volto": "7.1.0",
     "mrs-developer": "1.4.0"
   },
   "devDependencies": {
