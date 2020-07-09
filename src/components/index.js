@@ -10,6 +10,12 @@ import SubmitView from "./Submit/View";
 import EmailEdit from "./Email/Edit";
 import EmailView from "./Email/View";
 
+import CheckboxEdit from "./Checkbox/Edit";
+import CheckboxView from "./Checkbox/View";
+
+import SelectEdit from "./Select/Edit";
+import SelectView from "./Select/View";
+
 export {
   InputEdit,
   InputView,
@@ -19,4 +25,8 @@ export {
   SubmitView,
   EmailEdit,
   EmailView,
+  CheckboxEdit,
+  CheckboxView,
+  SelectEdit,
+  SelectView,
 };

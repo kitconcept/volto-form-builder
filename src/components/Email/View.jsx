@@ -1,5 +1,5 @@
 import React from "react";
-import { TextareaWidget } from "@plone/volto/components";
+import { TextWidget } from "@plone/volto/components";
 import { Form, Label } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { setFormbuilderInputValue } from "../../actions";
@@ -19,7 +19,7 @@ const EmailView = ({
   return (
     <>
       <Form>
-        <TextareaWidget
+        <TextWidget
           id="input-edit"
           title="Email"
           required={true}
