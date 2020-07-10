@@ -27,7 +27,7 @@ const SelectSidebar = (props) => {
       </header>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="select-label"
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
