@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import { Button } from "semantic-ui-react";
 import { connect } from "react-redux";
+import { SubmitHandler, SubmitHandlerGet } from "../../actions/index";
 
 const SubmitView = (props) => {
+  useEffect(() => {
+    props.SubmitHandlerGet(props.path);
+  }, []);
   const values = props.formbuilder[props.path] || {};
   const onClick = () => {
     alert(JSON.stringify(values));
+    props.SubmitHandler(props.path, props.formbuilder[props.path]);
   };
   return (
     <>
@@ -18,8 +23,11 @@ const SubmitView = (props) => {
   );
 };
 
-export default connect((state, props) => {
-  return {
-    formbuilder: state.formbuilder,
-  };
-})(SubmitView);
+export default connect(
+  (state, props) => {
+    return {
+      formbuilder: state.formbuilder,
+    };
+  },
+  { SubmitHandler, SubmitHandlerGet }
+)(SubmitView);
