@@ -16,6 +16,9 @@ import CheckboxView from "./Checkbox/View";
 import SelectEdit from "./Select/Edit";
 import SelectView from "./Select/View";
 
+import IntegerEdit from "./Integer/Edit";
+import IntegerView from "./Integer/View";
+
 export {
   InputEdit,
   InputView,
@@ -29,4 +32,6 @@ export {
   CheckboxView,
   SelectEdit,
   SelectView,
+  IntegerEdit,
+  IntegerView,
 };
