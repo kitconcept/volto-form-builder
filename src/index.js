@@ -13,6 +13,8 @@ import {
   CheckboxView,
   SelectEdit,
   SelectView,
+  IntegerEdit,
+  IntegerView,
 } from "./components";
 import { formbuilder } from "./reducers";
 
@@ -103,6 +105,21 @@ export default function applyConfig(config) {
       restricted: false,
       mostUsed: false,
       sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
+    integer: {
+      id: "integer",
+      title: "Integer",
+      icon: formSVG,
+      group: "form",
+      view: IntegerView,
+      edit: IntegerEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 0,
       security: {
         addPermission: [],
         view: [],
