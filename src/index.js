@@ -119,7 +119,7 @@ export default function applyConfig(config) {
       edit: IntegerEdit,
       restricted: false,
       mostUsed: false,
-      sidebarTab: 0,
+      sidebarTab: 1,
       security: {
         addPermission: [],
         view: [],
