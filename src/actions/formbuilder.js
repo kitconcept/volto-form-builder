@@ -4,7 +4,7 @@ import {
   Submit_Handler_Get,
 } from "../constants";
 
-export function setSlateBlockSelection(path, inputid, value) {
+export function setFormbuilderInputValue(path, inputid, value) {
   return {
     type: SET_FORMBUILDER_INPUT_VALUE,
     path,

@@ -1,5 +1,5 @@
 export {
-  setSlateBlockSelection as setFormbuilderInputValue,
+  setFormbuilderInputValue,
   SubmitHandler,
   SubmitHandlerGet,
 } from "./formbuilder";
