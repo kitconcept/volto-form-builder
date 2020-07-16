@@ -1,7 +1,8 @@
 import React from "react";
-// import { SidebarPortal, TextWidget } from '@plone/volto/components';
-// import InputSidebar from './InputSidebar';
-import TextIntegerNumber from "../Integer/Edit.jsx";
+import IntegerSidebar from "./IntegerSidebar";
+import { SidebarPortal } from "@plone/volto/components";
+
+import TextIntegerNumber from "../Widgets/TextNumber";
 import { Form } from "semantic-ui-react";
 
 const IntegerEdit = (props) => {
@@ -11,7 +12,7 @@ const IntegerEdit = (props) => {
       <Form>
         <TextIntegerNumber
           id="integer-edit"
-          title="Integer field"
+          title={props.data.label}
           required={true}
           value={value}
           onChange={(id, value) => {
@@ -21,9 +22,9 @@ const IntegerEdit = (props) => {
           wrapped
         />
       </Form>
-      {/* <SidebarPortal selected={props.selected}>
-        <InputSidebar {...props} />
-      </SidebarPortal> */}
+      <SidebarPortal selected={props.selected}>
+        <IntegerSidebar {...props} />
+      </SidebarPortal>
     </>
   );
 };
