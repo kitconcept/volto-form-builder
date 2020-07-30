@@ -1,25 +1,29 @@
-import React from 'react';
-import { Segment } from 'semantic-ui-react';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { TextWidget, CheckboxWidget } from '@plone/volto/components';
+import React from "react";
+import { Segment } from "semantic-ui-react";
+import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
+import { TextWidget, CheckboxWidget } from "@plone/volto/components";
 
 const messages = defineMessages({
   label: {
-    id: 'Label',
-    defaultMessage: 'Label',
+    id: "Label",
+    defaultMessage: "Label",
   },
   required: {
-    id: 'Required',
-    defaultMessage: 'Required',
+    id: "Required",
+    defaultMessage: "Required",
   },
   placeholder: {
-    id: 'Placeholder',
-    defaultMessage: 'Placeholder',
+    id: "Placeholder",
+    defaultMessage: "Placeholder",
+  },
+  customErrorMessage: {
+    id: "Error Message",
+    defaultMessage: "Error Message",
   },
 });
 
 const InputSidebar = (props) => {
-  const value = props.data.input;
+  const value = props.data.label;
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -36,7 +40,7 @@ const InputSidebar = (props) => {
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              input: v,
+              label: v,
             });
           }}
         />
@@ -55,14 +59,29 @@ const InputSidebar = (props) => {
         />
       </Segment>
       <Segment className="form sidebar-image-data">
-        <CheckboxWidget
+        <TextWidget
           id="external"
-          title={props.intl.formatMessage(messages.required)}
-          value={props.data.required}
+          title={props.intl.formatMessage(messages.customErrorMessage)}
+          value={props.data.customErrorMessage}
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              required: v,
+              customErrorMessage: v,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <CheckboxWidget
+          id="external"
+          title={props.intl.formatMessage(messages.required)}
+          value={props.data.validation?.required}
+          onChange={(e, v) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              validation: {
+                required: v,
+              },
             });
           }}
         />
