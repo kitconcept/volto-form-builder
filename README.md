@@ -25,8 +25,11 @@ Volto Form Builder allows editors to create forms in Volto.
 - [ ] As editor, I can add a checkbox field to a form
 - [ ] As editor, I can add a select field to a form
 - [ ] As editor, I can add an integer field to a form
+- [ ] As editor, I can add an file field to a form
+- [ ] As editor, I can add an image field to a form
 
 ## Misc
+
 - [ ] As editor, I can mark a form field as required
 - [ ] As editor, I can add plain text to a form
 - [ ] As editor, I can edit the text and links of the submit/cancel buttons of a form
