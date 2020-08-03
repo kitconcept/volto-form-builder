@@ -12,7 +12,10 @@ export default function formbuilder(state = initialState, action = {}) {
         ...state,
         [action.path]: {
           ...state[action.path],
-          [action.inputid]: action.value,
+          [action.inputid]: {
+            ...state[action.path]?.action?.inputid,
+            ...action.value,
+          },
         },
       };
     case `${Submit_Handler_Post}_SUCCESS`:

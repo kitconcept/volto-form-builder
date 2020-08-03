@@ -24,6 +24,8 @@ const EmailView = ({
           title="Email"
           required={true}
           value={email}
+          error={!error ? ["Please enter valid email"] : []}
+          placeholder="Enter your email"
           onChange={(id, value) => {
             setEmail(value);
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,11 +37,6 @@ const EmailView = ({
           }}
           wrapped
         />
-        {!error && (
-          <Label basic color="red" pointing>
-            "Please provide a correct email address"
-          </Label>
-        )}
       </Form>
     </>
   );

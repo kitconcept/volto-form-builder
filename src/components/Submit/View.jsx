@@ -4,13 +4,23 @@ import { connect } from "react-redux";
 import { SubmitHandler, SubmitHandlerGet } from "../../actions/index";
 
 const SubmitView = (props) => {
-  useEffect(() => {
-    props.SubmitHandlerGet(props.path);
-  }, []);
+  //This is for fetching the data of the form
+  // useEffect(() => {
+  //   props.SubmitHandlerGet(props.path);
+  // }, []);
   const values = props.formbuilder[props.path] || {};
+  let isValid = true;
   const onClick = () => {
-    alert(JSON.stringify(values));
-    props.SubmitHandler(props.path, props.formbuilder[props.path]);
+    for (let keys of Object.keys(values)) {
+      isValid = isValid && values[keys].valid;
+    }
+    if (isValid) {
+      alert(JSON.stringify(values));
+    } else {
+      alert("Please fill the form Properly");
+    }
+    // This is for submiting the data of the form
+    // props.SubmitHandler(props.path, props.formbuilder[props.path]);
   };
   return (
     <>

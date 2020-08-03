@@ -22,6 +22,7 @@ const TextareaView = ({
         title={data.textarea}
         required={data.required}
         value={formbuilder[path]?.[blockid] || ""}
+        placeholder="This is text area"
         onChange={(id, value) => setFormbuilderInputValue(path, blockid, value)}
       />
     </Form>
