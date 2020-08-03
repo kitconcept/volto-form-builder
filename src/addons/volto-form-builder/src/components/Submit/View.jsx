@@ -10,14 +10,17 @@ const SubmitView = (props) => {
   // }, []);
   const values = props.formbuilder[props.path] || {};
   let isValid = true;
+  let labels = [];
   const onClick = () => {
     for (let keys of Object.keys(values)) {
-      isValid = isValid && values[keys].valid;
+      if (values[keys].validation?.required) {
+        isValid = isValid && values[keys].valid;
+      }
     }
     if (isValid) {
       alert(JSON.stringify(values));
     } else {
-      alert('Please fill the form Properly');
+      alert('Please fill the form Properly', JSON.stringify(labels));
     }
     // This is for submiting the data of the form
     // props.SubmitHandler(props.path, props.formbuilder[props.path]);

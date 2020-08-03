@@ -11,7 +11,7 @@ const messages = defineMessages({
 });
 
 const CheckboxSidebar = (props) => {
-  const value = props.data.checkboxText;
+  const value = props.data.label;
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -28,7 +28,7 @@ const CheckboxSidebar = (props) => {
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              checkboxText: v,
+              label: v,
             });
           }}
         />

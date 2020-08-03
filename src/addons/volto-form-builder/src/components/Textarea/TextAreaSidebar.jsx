@@ -1,25 +1,33 @@
-import React from 'react';
-import { Segment } from 'semantic-ui-react';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import React from "react";
+import { Segment } from "semantic-ui-react";
+import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
 import {
   TextWidget,
   SelectWidget,
   CheckboxWidget,
-} from '@plone/volto/components';
+} from "@plone/volto/components";
 
 const messages = defineMessages({
   label: {
-    id: 'Label',
-    defaultMessage: 'Label',
+    id: "Label",
+    defaultMessage: "Label",
   },
   required: {
-    id: 'Required',
-    defaultMessage: 'Required',
+    id: "Required",
+    defaultMessage: "Required",
+  },
+  placeholder: {
+    id: "Placeholder",
+    defaultMessage: "Placeholder",
+  },
+  customErrorMessage: {
+    id: "Error Message",
+    defaultMessage: "Error Message",
   },
 });
 
 const TextAreaSidebar = (props) => {
-  const value = props.data.textarea;
+  const value = props.data.label;
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -36,7 +44,33 @@ const TextAreaSidebar = (props) => {
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              textarea: v,
+              label: v,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.placeholder)}
+          value={props.data.placeholder}
+          onChange={(e, v) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              placeholder: v,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.customErrorMessage)}
+          value={props.data.customErrorMessage}
+          onChange={(e, v) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              customErrorMessage: v,
             });
           }}
         />
@@ -45,11 +79,13 @@ const TextAreaSidebar = (props) => {
         <CheckboxWidget
           id="external"
           title={props.intl.formatMessage(messages.required)}
-          value={props.data.required}
+          value={props.data.validation?.required}
           onChange={(e, v) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              required: v,
+              validation: {
+                required: v,
+              },
             });
           }}
         />

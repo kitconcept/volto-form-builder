@@ -9,7 +9,7 @@ const CheckboxEdit = (props) => {
       <Form>
         <CheckboxWidget
           id="external"
-          title={props.data.checkboxText}
+          title={props.data.label}
           value={false}
           onChange={() => {}}
         />

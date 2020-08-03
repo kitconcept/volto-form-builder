@@ -10,6 +10,7 @@ const EmailEdit = (props) => {
           id="input-edit"
           title="Email"
           required={true}
+          placeholder="Enter Your Email"
           value=""
           onChange={() => {}}
           wrapped

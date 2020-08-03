@@ -21,9 +21,10 @@ const IntegerView = ({
           id="integer-edit"
           title={data.label}
           required={true}
-          value={formbuilder[path]?.[blockid] || ''}
+          placeholder={data.placeholder}
+          value={formbuilder[path]?.[blockid]?.value || ''}
           onChange={(id, value) => {
-            setFormbuilderInputValue(path, blockid, value);
+            setFormbuilderInputValue(path, blockid, { ...data, value });
           }}
           wrapped
         />
