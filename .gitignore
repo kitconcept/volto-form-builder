@@ -3,7 +3,6 @@ logs
 *.log
 npm-debug.log*
 .DS_Store
-*.pyc
 
 coverage
 node_modules
@@ -15,16 +14,3 @@ build
 
 data
 omelette
-
-demo/api/.installed.cfg
-demo/api/.mr.developer.cfg
-demo/api/pyvenv.cfg
-demo/api/bin/
-demo/api/lib/
-demo/api/parts/
-demo/api/pyvenv.cfg
-demo/api/src/
-demo/api/var/
-demo/cypress/videos
-
-*~
