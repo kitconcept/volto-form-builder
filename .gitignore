@@ -14,3 +14,13 @@ build
 
 data
 omelette
+
+api/.installed.cfg
+api/.mr.developer.cfg
+api/bin/
+api/develop-eggs/
+api/lib/
+api/parts/
+api/pyvenv.cfg
+api/src/
+api/var/

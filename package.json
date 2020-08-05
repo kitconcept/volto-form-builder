@@ -3,6 +3,13 @@
   "description": "Volto Starter Kit",
   "license": "MIT",
   "version": "6.2.2",
+  "private": "true",
+  "addons": [
+    "@kitconcept/volto-form-builder"
+  ],
+  "workspaces": [
+    "src/addons/volto-form-builder"
+  ],
   "scripts": {
     "start": "razzle start",
     "postinstall": "yarn omelette && yarn patches",
@@ -32,6 +39,7 @@
       "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
+      "@kitconcept/volto-form-builder/(.*)$": "<rootDir>/src/addons/volto-form-builder/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
     },
     "coverageThreshold": {
