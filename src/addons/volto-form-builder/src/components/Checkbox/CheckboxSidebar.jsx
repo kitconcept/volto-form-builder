@@ -25,10 +25,10 @@ const CheckboxSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              label: v,
+              label: value,
             });
           }}
         />

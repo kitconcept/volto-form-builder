@@ -1,20 +1,20 @@
-import React from 'react';
-import { Segment } from 'semantic-ui-react';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { TextWidget, CheckboxWidget } from '@plone/volto/components';
+import React from "react";
+import { Segment } from "semantic-ui-react";
+import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
+import { TextWidget, CheckboxWidget } from "@plone/volto/components";
 
 const messages = defineMessages({
   email: {
-    id: 'Email',
-    defaultMessage: 'Email',
+    id: "Email",
+    defaultMessage: "Email",
   },
   required: {
-    id: 'Required',
-    defaultMessage: 'Required',
+    id: "Required",
+    defaultMessage: "Required",
   },
   label: {
-    id: 'Label',
-    defaultMessage: 'Label',
+    id: "Label",
+    defaultMessage: "Label",
   },
 });
 
@@ -33,10 +33,10 @@ const SubmitSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={props.data.submit}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              submit: v,
+              submit: value,
             });
           }}
         />
@@ -47,10 +47,10 @@ const SubmitSidebar = (props) => {
           title={props.intl.formatMessage(messages.email)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              email: v,
+              email: value,
             });
           }}
         />

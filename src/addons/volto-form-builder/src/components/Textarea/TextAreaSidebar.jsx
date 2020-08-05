@@ -41,10 +41,10 @@ const TextAreaSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              label: v,
+              label: value,
             });
           }}
         />
@@ -54,10 +54,10 @@ const TextAreaSidebar = (props) => {
           id="external"
           title={props.intl.formatMessage(messages.placeholder)}
           value={props.data.placeholder}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              placeholder: v,
+              placeholder: value,
             });
           }}
         />
@@ -67,10 +67,10 @@ const TextAreaSidebar = (props) => {
           id="external"
           title={props.intl.formatMessage(messages.customErrorMessage)}
           value={props.data.customErrorMessage}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              customErrorMessage: v,
+              customErrorMessage: value,
             });
           }}
         />
@@ -80,11 +80,11 @@ const TextAreaSidebar = (props) => {
           id="external"
           title={props.intl.formatMessage(messages.required)}
           value={props.data.validation?.required}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
               validation: {
-                required: v,
+                required: value,
               },
             });
           }}

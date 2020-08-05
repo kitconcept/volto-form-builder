@@ -37,7 +37,7 @@ const EmailView = ({
                 required: true,
               },
               placeholder: 'Enter your email',
-              customErrormessage: 'Please enter a valid email',
+              customErrorMessage: 'Please enter a valid email',
               valid: error,
               touch: true,
               value,
