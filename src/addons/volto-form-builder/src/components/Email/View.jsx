@@ -1,8 +1,8 @@
-import React from "react";
-import { TextWidget } from "@plone/volto/components";
-import { Form, Label } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { setFormbuilderInputValue } from "../../actions";
+import React from 'react';
+import { TextWidget } from '@plone/volto/components';
+import { Form, Label } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { setFormbuilderInputValue } from '../../actions';
 
 const EmailView = ({
   data,
@@ -14,7 +14,7 @@ const EmailView = ({
   ...rest
 }) => {
   const blockid = id;
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = React.useState('');
   const [error, setError] = React.useState(true);
   return (
     <>
@@ -24,7 +24,7 @@ const EmailView = ({
           title="Email"
           required={true}
           value={email}
-          error={!error ? ["Please enter valid email"] : []}
+          error={!error ? ['Please enter valid email'] : []}
           placeholder="Enter your email"
           onChange={(id, value) => {
             setEmail(value);
@@ -50,5 +50,5 @@ export default connect(
   },
   {
     setFormbuilderInputValue,
-  }
+  },
 )(EmailView);

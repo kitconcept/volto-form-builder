@@ -1,8 +1,8 @@
-import React from "react";
-import TextIntegerNumber from "../Widgets/TextNumber";
-import { Form } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { setFormbuilderInputValue } from "../../actions";
+import React from 'react';
+import TextIntegerNumber from '../Widgets/TextNumber';
+import { Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { setFormbuilderInputValue } from '../../actions';
 
 const IntegerView = ({
   data,
@@ -21,7 +21,7 @@ const IntegerView = ({
           id="integer-edit"
           title={data.label}
           required={true}
-          value={formbuilder[path]?.[blockid] || ""}
+          value={formbuilder[path]?.[blockid] || ''}
           onChange={(id, value) => {
             setFormbuilderInputValue(path, blockid, value);
           }}
@@ -40,5 +40,5 @@ export default connect(
   },
   {
     setFormbuilderInputValue,
-  }
+  },
 )(IntegerView);

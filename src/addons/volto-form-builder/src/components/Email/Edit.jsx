@@ -1,6 +1,6 @@
-import React from "react";
-import { TextWidget } from "@plone/volto/components";
-import { Form } from "semantic-ui-react";
+import React from 'react';
+import { TextWidget } from '@plone/volto/components';
+import { Form } from 'semantic-ui-react';
 
 const EmailEdit = (props) => {
   return (

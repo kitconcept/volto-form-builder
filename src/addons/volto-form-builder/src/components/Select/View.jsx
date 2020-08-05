@@ -1,8 +1,8 @@
-import React from "react";
-import { SelectWidget } from "@plone/volto/components";
-import { Form } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { setFormbuilderInputValue } from "../../actions";
+import React from 'react';
+import { SelectWidget } from '@plone/volto/components';
+import { Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { setFormbuilderInputValue } from '../../actions';
 
 const SelectView = ({
   data,
@@ -14,8 +14,8 @@ const SelectView = ({
   ...rest
 }) => {
   const blockid = id;
-  const [value, setValue] = React.useState("");
-  const choices = data.choices?.split(",").reduce((acc, value) => {
+  const [value, setValue] = React.useState('');
+  const choices = data.choices?.split(',').reduce((acc, value) => {
     return [...acc, [`${value}`, value]];
   }, []);
   return (
@@ -44,5 +44,5 @@ export default connect(
   },
   {
     setFormbuilderInputValue,
-  }
+  },
 )(SelectView);

@@ -1,8 +1,8 @@
-import React from "react";
-import { CheckboxWidget } from "@plone/volto/components";
-import { Form } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { setFormbuilderInputValue } from "../../actions";
+import React from 'react';
+import { CheckboxWidget } from '@plone/volto/components';
+import { Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { setFormbuilderInputValue } from '../../actions';
 
 const CheckboxView = ({
   data,
@@ -38,5 +38,5 @@ export default connect(
   },
   {
     setFormbuilderInputValue,
-  }
+  },
 )(CheckboxView);

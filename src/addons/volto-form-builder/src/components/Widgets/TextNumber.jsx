@@ -3,41 +3,41 @@
  * @module components/manage/Widgets/TextWidget
  */
 
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Input, Icon as IconOld } from "semantic-ui-react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Input, Icon as IconOld } from 'semantic-ui-react';
 
-import { defineMessages, injectIntl } from "react-intl";
-import { Icon, FormFieldWrapper } from "@plone/volto/components";
+import { defineMessages, injectIntl } from 'react-intl';
+import { Icon, FormFieldWrapper } from '@plone/volto/components';
 
 const messages = defineMessages({
   default: {
-    id: "Default",
-    defaultMessage: "Default",
+    id: 'Default',
+    defaultMessage: 'Default',
   },
   idTitle: {
-    id: "Short Name",
-    defaultMessage: "Short Name",
+    id: 'Short Name',
+    defaultMessage: 'Short Name',
   },
   idDescription: {
-    id: "Used for programmatic access to the fieldset.",
-    defaultMessage: "Used for programmatic access to the fieldset.",
+    id: 'Used for programmatic access to the fieldset.',
+    defaultMessage: 'Used for programmatic access to the fieldset.',
   },
   title: {
-    id: "Title",
-    defaultMessage: "Title",
+    id: 'Title',
+    defaultMessage: 'Title',
   },
   description: {
-    id: "Description",
-    defaultMessage: "Description",
+    id: 'Description',
+    defaultMessage: 'Description',
   },
   required: {
-    id: "Required",
-    defaultMessage: "Required",
+    id: 'Required',
+    defaultMessage: 'Required',
   },
   delete: {
-    id: "Delete",
-    defaultMessage: "Delete",
+    id: 'Delete',
+    defaultMessage: 'Delete',
   },
 });
 
@@ -121,32 +121,32 @@ class TextNumberWidget extends Component {
     const schema = {
       fieldsets: [
         {
-          id: "default",
+          id: 'default',
           title: intl.formatMessage(messages.default),
-          fields: ["title", "id", "description", "required"],
+          fields: ['title', 'id', 'description', 'required'],
         },
       ],
       properties: {
         id: {
-          type: "string",
+          type: 'string',
           title: intl.formatMessage(messages.idTitle),
           description: intl.formatMessage(messages.idDescription),
         },
         title: {
-          type: "string",
+          type: 'string',
           title: intl.formatMessage(messages.title),
         },
         description: {
-          type: "string",
-          widget: "textarea",
+          type: 'string',
+          widget: 'textarea',
           title: intl.formatMessage(messages.description),
         },
         required: {
-          type: "boolean",
+          type: 'boolean',
           title: intl.formatMessage(messages.required),
         },
       },
-      required: ["id", "title"],
+      required: ['id', 'title'],
     };
 
     return (
@@ -171,14 +171,14 @@ class TextNumberWidget extends Component {
         <Input
           id={`field-${id}`}
           name={id}
-          value={value || ""}
+          value={value || ''}
           disabled={onEdit !== null}
           type="number"
           max="10"
           min="0"
           icon={icon || null}
           onChange={({ target }) =>
-            onChange(id, target.value === "" ? undefined : target.value)
+            onChange(id, target.value === '' ? undefined : target.value)
           }
           ref={(node) => {
             this.node = node;

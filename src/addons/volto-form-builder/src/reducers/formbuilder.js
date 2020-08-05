@@ -2,7 +2,7 @@ import {
   SET_FORMBUILDER_INPUT_VALUE,
   Submit_Handler_Post,
   Submit_Handler_Get,
-} from "../constants";
+} from '../constants';
 const initialState = { list: [] };
 
 export default function formbuilder(state = initialState, action = {}) {

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Button } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { SubmitHandler, SubmitHandlerGet } from "../../actions/index";
+import React, { useEffect } from 'react';
+import { Button } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { SubmitHandler, SubmitHandlerGet } from '../../actions/index';
 
 const SubmitView = (props) => {
   //This is for fetching the data of the form
@@ -17,7 +17,7 @@ const SubmitView = (props) => {
     if (isValid) {
       alert(JSON.stringify(values));
     } else {
-      alert("Please fill the form Properly");
+      alert('Please fill the form Properly');
     }
     // This is for submiting the data of the form
     // props.SubmitHandler(props.path, props.formbuilder[props.path]);
@@ -39,5 +39,5 @@ export default connect(
       formbuilder: state.formbuilder,
     };
   },
-  { SubmitHandler, SubmitHandlerGet }
+  { SubmitHandler, SubmitHandlerGet },
 )(SubmitView);

@@ -1,12 +1,12 @@
-import React from "react";
-import { Segment } from "semantic-ui-react";
-import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
-import { TextWidget } from "@plone/volto/components";
+import React from 'react';
+import { Segment } from 'semantic-ui-react';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import { TextWidget } from '@plone/volto/components';
 
 const messages = defineMessages({
   label: {
-    id: "Label",
-    defaultMessage: "Label",
+    id: 'Label',
+    defaultMessage: 'Label',
   },
 });
 

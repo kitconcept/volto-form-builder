@@ -1,4 +1,4 @@
-import formSVG from "@plone/volto/icons/form.svg";
+import formSVG from '@plone/volto/icons/form.svg';
 
 import {
   InputEdit,
@@ -15,16 +15,16 @@ import {
   SelectView,
   IntegerEdit,
   IntegerView,
-} from "./components";
-import { formbuilder } from "./reducers";
+} from './components';
+import { formbuilder } from './reducers';
 
 export default function applyConfig(config) {
   const FormBlock = {
     inputBlock: {
-      id: "inputBlock",
-      title: "Input",
+      id: 'inputBlock',
+      title: 'Input',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: InputView,
       edit: InputEdit,
       restricted: false,
@@ -36,10 +36,10 @@ export default function applyConfig(config) {
       },
     },
     textarea: {
-      id: "textarea",
-      title: "Textarea",
+      id: 'textarea',
+      title: 'Textarea',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: TextareaView,
       edit: TextareaEdit,
       restricted: false,
@@ -51,10 +51,10 @@ export default function applyConfig(config) {
       },
     },
     submit: {
-      id: "submit",
-      title: "Submit",
+      id: 'submit',
+      title: 'Submit',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: SubmitView,
       edit: SubmitEdit,
       restricted: false,
@@ -66,10 +66,10 @@ export default function applyConfig(config) {
       },
     },
     email: {
-      id: "email",
-      title: "Email",
+      id: 'email',
+      title: 'Email',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: EmailView,
       edit: EmailEdit,
       restricted: false,
@@ -81,10 +81,10 @@ export default function applyConfig(config) {
       },
     },
     checkbox: {
-      id: "checkbox",
-      title: "Checkbox",
+      id: 'checkbox',
+      title: 'Checkbox',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: CheckboxView,
       edit: CheckboxEdit,
       restricted: false,
@@ -96,10 +96,10 @@ export default function applyConfig(config) {
       },
     },
     select: {
-      id: "select",
-      title: "Select",
+      id: 'select',
+      title: 'Select',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: SelectView,
       edit: SelectEdit,
       restricted: false,
@@ -111,10 +111,10 @@ export default function applyConfig(config) {
       },
     },
     integer: {
-      id: "integer",
-      title: "Integer",
+      id: 'integer',
+      title: 'Integer',
       icon: formSVG,
-      group: "form",
+      group: 'form',
       view: IntegerView,
       edit: IntegerEdit,
       restricted: false,
@@ -129,7 +129,7 @@ export default function applyConfig(config) {
 
   const groupBlocksOrder = [
     ...config.blocks.groupBlocksOrder,
-    { id: "form", title: "Form" },
+    { id: 'form', title: 'Form' },
   ];
 
   config.blocks = {

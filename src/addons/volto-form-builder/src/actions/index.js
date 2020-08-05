@@ -2,4 +2,4 @@ export {
   setFormbuilderInputValue,
   SubmitHandler,
   SubmitHandlerGet,
-} from "./formbuilder";
+} from './formbuilder';

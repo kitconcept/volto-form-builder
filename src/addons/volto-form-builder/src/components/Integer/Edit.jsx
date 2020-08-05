@@ -1,9 +1,9 @@
-import React from "react";
-import IntegerSidebar from "./IntegerSidebar";
-import { SidebarPortal } from "@plone/volto/components";
+import React from 'react';
+import IntegerSidebar from './IntegerSidebar';
+import { SidebarPortal } from '@plone/volto/components';
 
-import TextIntegerNumber from "../Widgets/TextNumber";
-import { Form } from "semantic-ui-react";
+import TextIntegerNumber from '../Widgets/TextNumber';
+import { Form } from 'semantic-ui-react';
 
 const IntegerEdit = (props) => {
   const [value, setValue] = React.useState(0);

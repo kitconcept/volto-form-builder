@@ -1,7 +1,7 @@
-import React from "react";
-import { CheckboxWidget, SidebarPortal } from "@plone/volto/components";
-import { Form } from "semantic-ui-react";
-import CheckboxSidebar from "./CheckboxSidebar";
+import React from 'react';
+import { CheckboxWidget, SidebarPortal } from '@plone/volto/components';
+import { Form } from 'semantic-ui-react';
+import CheckboxSidebar from './CheckboxSidebar';
 
 const CheckboxEdit = (props) => {
   return (
