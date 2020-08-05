@@ -15,6 +15,8 @@ build
 data
 omelette
 
+cypress/videos
+
 api/.installed.cfg
 api/.mr.developer.cfg
 api/bin/
