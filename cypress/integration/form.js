@@ -18,16 +18,12 @@ context('Form Blocks Tests', () => {
     cy.get(`.block.title [data-contents]`);
   });
 
-  it('As editor I can add a single-line text field to a form', function() {
+  it('As editor I can add a single-line text field to a form', function () {
     // add input field block
     cy.get('.block.inner.text .public-DraftEditor-content').click();
     cy.get('button.block-add-button').click();
-    cy.get('.blocks-chooser > .accordion > .title')
-      .contains('Form')
-      .click();
-    cy.get('.ui.basic.icon.button.inputBlock')
-      .contains('Input')
-      .click();
+    cy.get('.blocks-chooser > .accordion > .title').contains('Form').click();
+    cy.get('.ui.basic.icon.button.inputBlock').contains('Input').click();
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 

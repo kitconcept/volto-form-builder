@@ -1542,10 +1542,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@plone/volto@6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-6.5.0.tgz#d296752dd9553dbc3b83c8a5d8f2b8c609bba78c"
-  integrity sha512-VKycoTDDSE1rdth0c8IPlZHUo1HMUy1j6iZkBokf+Ji8HvWkzjlv++cydpyJUOdEVieNAbtP6d5NN34/sHUzLQ==
+"@plone/volto@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-7.1.0.tgz#0774e484e6cd811c44932b2bf06c729012e73a0b"
+  integrity sha512-U45jkRw/PFuCJLC5rEQp5yjEC0c6FdRQL+4XRxnRBktlYmv8r0RTNekva5rne4Dj69Gj4IWtEqXp9oRxbCoq0w==
   dependencies:
     "@babel/core" "7.9.6"
     "@babel/plugin-proposal-decorators" "7.8.3"
