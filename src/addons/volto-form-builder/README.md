@@ -6,7 +6,7 @@
 
 # Volto Form Builder
 
-Volto Form Builder allows editors to create forms in Volto.
+An interactive form builder for Volto, that allows editors to assemble forms via drag and drop.
 
 # Features
 
