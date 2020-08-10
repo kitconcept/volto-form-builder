@@ -76,9 +76,10 @@ jobs:
         with:
           name: cypress-screenshots
           path: demo/cypress/screenshots
+
       # Upload Cypress videos
       - uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: cypress-videos
           path: demo/cypress/videos
