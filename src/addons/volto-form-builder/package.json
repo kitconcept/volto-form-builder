@@ -1,0 +1,46 @@
+{
+  "name": "@kitconcept/volto-form-builder",
+  "version": "1.0.0",
+  "description": "Form builder for Volto",
+  "main": "index.js",
+  "scripts": {
+    "develop:npx": "npx -p mrs-developer missdev --config=jsconfig.json --output=addons",
+    "develop": "missdev --config=jsconfig.json --output=addons",
+    "preinstall": "if [ -f $(pwd)/node_modules/.bin/missdev ]; then yarn develop; else yarn develop:npx; fi",
+    "postinstall": "yarn omelette && yarn patches",
+    "start": "razzle start",
+    "omelette": "ln -sf node_modules/@plone/volto/ omelette",
+    "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom --passWithNoTests",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "i18n": "rm -rf build/messages && NODE_ENV=production node src/i18n.js",
+    "prettier": "./node_modules/.bin/prettier --single-quote --check 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "prettier:fix": "./node_modules/.bin/prettier --single-quote --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "lint": "./node_modules/eslint/bin/eslint.js --max-warnings=0 'src/**/*.{js,jsx,json}'",
+    "lint:fix": "./node_modules/eslint/bin/eslint.js --fix 'src/**/*.{js,jsx,json}'",
+    "code-analysis:i18n": "yarn i18n && git diff -G'^[^\"POT]' --exit-code",
+    "cypress:run": "NODE_ENV=development CYPRESS_RETRIES=2 cypress run",
+    "cy:install": "cypress install",
+    "cy:run": "cypress run",
+    "cy:test:fixture:setup": "node cypress/support/reset-fixture.js",
+    "cy:test:fixture:teardown": "node cypress/support/reset-fixture.js teardown",
+    "ci:start-backend": "make start-test-backend",
+    "ci:start-frontend": "RAZZLE_API_PATH=http://localhost:55001/plone yarn build && start-test start:prod http-get://localhost:3000 cypress:run",
+    "ci:cypress:run": "start-test ci:start-backend http-get://localhost:55001/plone ci:start-frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitconcept/volto-form-builder.git"
+  },
+  "keywords": [
+    "Volto"
+  ],
+  "author": "Alok Kumar | kitconcept GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kitconcept/volto-form-builder/issues"
+  },
+  "homepage": "https://github.com/kitconcept/volto-form-builder#readme",
+  "dependencies": {}
+}

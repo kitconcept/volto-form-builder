@@ -29,10 +29,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       # node install
-      - run: (cd demo && yarn install --frozen-lockfile)
+      - run: yarn install --frozen-lockfile
 
       # node code analysis
-      - run: (cd demo && yarn run prettier)
+      - run: yarn run prettier
       # - run: yarn run lint
       # - run: yarn run code-analysis:i18n
 
@@ -55,20 +55,20 @@ jobs:
 
       # python install
       - name: install virtualenv
-        working-directory: demo/api
+        working-directory: api
         run: pip install virtualenv
       - name: run pip install
-        working-directory: demo/api
+        working-directory: api
         run: pip install -r requirements.txt
       - name: run buildout
-        working-directory: demo/api
+        working-directory: api
         run: buildout
         env:
           CI: true
 
       # Run Cypress tests
       - name: Cypress acceptance tests
-        run: (cd demo && yarn ci:cypress:run)
+        run: yarn ci:cypress:run
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v1
@@ -76,9 +76,10 @@ jobs:
         with:
           name: cypress-screenshots
           path: demo/cypress/screenshots
+
       # Upload Cypress videos
       - uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: cypress-videos
           path: demo/cypress/videos

@@ -1,43 +1,52 @@
-# volto-form-builder
+## Documentation
 
-![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/kitconcept.png)
+A training on how to create your own website using Volto is available as part of the Plone training at [https://training.plone.org/5/volto/index.html](https://training.plone.org/5/volto/index.html).
 
-![Volto Form Builder](https://github.com/kitconcept/volto-form-builder/workflows/Volto%20Form%20Builder/badge.svg)
+## Quick Start
 
-# Volto Form Builder
+Below is a list of commands you will probably find useful.
 
-Volto Form Builder allows editors to create forms in Volto.
+### `yarn start`
 
-# Features
+Runs the project in development mode.  
+You can view your application at `http://localhost:3000`
 
-## Basics
+The page will reload if you make edits.
 
-- [x] As editor, I can add a form
-- [x] As editor, I can add a single-line text field to a form
-- [x] As editor, I can add a multi-line text field to a form
-- [x] As editor, I can add an email field to a form
-- [ ] As editor, I can add a RichText field to a form
+### `yarn build`
 
-## Additional Fields
+Builds the app for production to the build folder.
 
-- [ ] As editor, I can add a hidden text field to a form
-- [ ] As editor, I can add a boolean field to a form
-- [ ] As editor, I can add a checkbox field to a form
-- [ ] As editor, I can add a select field to a form
-- [ ] As editor, I can add an integer field to a form
-- [ ] As editor, I can add an file field to a form
-- [ ] As editor, I can add an image field to a form
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
-## Misc
+### `yarn start:prod`
 
-- [ ] As editor, I can mark a form field as required
-- [ ] As editor, I can add plain text to a form
-- [ ] As editor, I can edit the text and links of the submit/cancel buttons of a form
-- [ ] As editor, I can add a regexp validation to a form field
-Form Actions
-- [ ] As editor, I can add a send-email action to a form
-- [ ] As editor, I can store submitted form data as CSV
+Runs the compiled app in production.
 
-## Form View
+You can again view your application at `http://localhost:3000`
 
-- [x] As anonymous user, I can see and submit a form
+### `yarn test`
+
+Runs the test watcher (Jest) in an interactive mode.
+By default, runs tests related to files changed since the last commit.
+
+### `yarn i18n`
+
+Runs the test i18n runner which extracts all the translation strings and
+generates the needed files.
+
+
+### mr_developer
+
+[mr_developer](https://www.npmjs.com/package/mr-developer) is a great tool
+for developing multiple packages at the same time.
+
+mr_developer should work with this project by using the `--config` config option:
+
+```bash
+mrdeveloper --config=jsconfig.json
+```
+
+Volto's latest razzle config will pay attention to your jsconfig.json file
+for any customizations.
