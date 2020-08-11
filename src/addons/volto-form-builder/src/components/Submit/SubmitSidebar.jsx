@@ -33,10 +33,10 @@ const SubmitSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={props.data.submit}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              submit: v,
+              submit: value,
             });
           }}
         />
@@ -47,10 +47,10 @@ const SubmitSidebar = (props) => {
           title={props.intl.formatMessage(messages.email)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              email: v,
+              email: value,
             });
           }}
         />

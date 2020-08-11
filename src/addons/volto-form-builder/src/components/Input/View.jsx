@@ -31,7 +31,14 @@ const InputView = ({
         title={data.label?.length > 0 ? data.label : 'enter input label'}
         required={data.validation?.required}
         value={reducerData?.value || ''}
-        error={reducerData?.valid ? [] : [data.customErrorMessage]}
+        placeholder={data.placeholder}
+        error={
+          reducerData?.touch
+            ? reducerData?.valid
+              ? []
+              : [data.customErrorMessage]
+            : []
+        }
         onChange={(id, value) => {
           let isValid;
           if (reducerData.touch && typeof value == 'undefined') {

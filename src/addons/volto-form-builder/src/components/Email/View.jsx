@@ -31,9 +31,17 @@ const EmailView = ({
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             const error = re.test(String(email).toLowerCase());
             setError(error);
-            if (error) {
-              setFormbuilderInputValue(path, blockid, value);
-            }
+            setFormbuilderInputValue(path, blockid, {
+              label: 'Email',
+              validation: {
+                required: true,
+              },
+              placeholder: 'Enter your email',
+              customErrorMessage: 'Please enter a valid email',
+              valid: error,
+              touch: true,
+              value,
+            });
           }}
           wrapped
         />

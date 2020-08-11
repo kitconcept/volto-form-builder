@@ -1,7 +1,11 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
-import { TextareaWidget, TextWidget } from '@plone/volto/components';
+import {
+  TextareaWidget,
+  TextWidget,
+  CheckboxWidget,
+} from '@plone/volto/components';
 
 const messages = defineMessages({
   label: {
@@ -11,6 +15,14 @@ const messages = defineMessages({
   choices: {
     id: 'Choices',
     defineMessages: 'Choices',
+  },
+  required: {
+    id: 'Required',
+    defaultMessage: 'Required',
+  },
+  customErrorMessage: {
+    id: 'Error Message',
+    defaultMessage: 'Error Message',
   },
 });
 
@@ -31,10 +43,10 @@ const SelectSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              label: v,
+              label: value,
             });
           }}
         />
@@ -45,10 +57,38 @@ const SelectSidebar = (props) => {
           title={props.intl.formatMessage(messages.choices)}
           required={true}
           value={choice}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              choices: v,
+              choices: value,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.customErrorMessage)}
+          value={props.data.customErrorMessage}
+          onChange={(event, value) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              customErrorMessage: value,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <CheckboxWidget
+          id="external"
+          title={props.intl.formatMessage(messages.required)}
+          value={props.data.validation?.required}
+          onChange={(event, value) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              validation: {
+                required: value,
+              },
             });
           }}
         />

@@ -16,10 +16,18 @@ const messages = defineMessages({
     id: 'Required',
     defaultMessage: 'Required',
   },
+  placeholder: {
+    id: 'Placeholder',
+    defaultMessage: 'Placeholder',
+  },
+  customErrorMessage: {
+    id: 'Error Message',
+    defaultMessage: 'Error Message',
+  },
 });
 
 const TextAreaSidebar = (props) => {
-  const value = props.data.textarea;
+  const value = props.data.label;
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -33,10 +41,36 @@ const TextAreaSidebar = (props) => {
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
-          onChange={(e, v) => {
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              textarea: v,
+              label: value,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.placeholder)}
+          value={props.data.placeholder}
+          onChange={(event, value) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              placeholder: value,
+            });
+          }}
+        />
+      </Segment>
+      <Segment className="form sidebar-image-data">
+        <TextWidget
+          id="external"
+          title={props.intl.formatMessage(messages.customErrorMessage)}
+          value={props.data.customErrorMessage}
+          onChange={(event, value) => {
+            props.onChangeBlock(props.block, {
+              ...props.data,
+              customErrorMessage: value,
             });
           }}
         />
@@ -45,11 +79,13 @@ const TextAreaSidebar = (props) => {
         <CheckboxWidget
           id="external"
           title={props.intl.formatMessage(messages.required)}
-          value={props.data.required}
-          onChange={(e, v) => {
+          value={props.data.validation?.required}
+          onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
-              required: v,
+              validation: {
+                required: value,
+              },
             });
           }}
         />

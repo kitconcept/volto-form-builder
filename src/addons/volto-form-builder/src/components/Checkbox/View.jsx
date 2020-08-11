@@ -19,10 +19,10 @@ const CheckboxView = ({
       <Form>
         <CheckboxWidget
           id="external"
-          title={data.checkboxText}
-          value={formbuilder[path]?.[blockid] || false}
+          title={data.label}
+          value={formbuilder[path]?.[blockid]?.value || false}
           onChange={(id, value) => {
-            setFormbuilderInputValue(path, blockid, value);
+            setFormbuilderInputValue(path, blockid, { ...data, value });
           }}
         />
       </Form>
