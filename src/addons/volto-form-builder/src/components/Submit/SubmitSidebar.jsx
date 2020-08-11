@@ -1,20 +1,20 @@
-import React from "react";
-import { Segment } from "semantic-ui-react";
-import { FormattedMessage, injectIntl, defineMessages } from "react-intl";
-import { TextWidget, CheckboxWidget } from "@plone/volto/components";
+import React from 'react';
+import { Segment } from 'semantic-ui-react';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import { TextWidget, CheckboxWidget } from '@plone/volto/components';
 
 const messages = defineMessages({
   email: {
-    id: "Email",
-    defaultMessage: "Email",
+    id: 'Email',
+    defaultMessage: 'Email',
   },
   required: {
-    id: "Required",
-    defaultMessage: "Required",
+    id: 'Required',
+    defaultMessage: 'Required',
   },
   label: {
-    id: "Label",
-    defaultMessage: "Label",
+    id: 'Label',
+    defaultMessage: 'Label',
   },
 });
 
