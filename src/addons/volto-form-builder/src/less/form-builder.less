@@ -1,5 +1,74 @@
 @import 'globals.less';
 
 @addon: 'volto-form-builder';
-@addontype: ''; // I did not understand this field
-@addonelement: ''; // Same for this
+@addontype: 'form';
+@addonelement: 'form';
+
+.loadAddonVariables();
+
+.ui.button.submit-block-button {
+  background: #e40166;
+  color: white;
+}
+
+.input-form {
+  font-size: 16px;
+  width: 50%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.input-form input {
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  padding-top: 20px;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.input-form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+.input-form label::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.input-content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.input-form input:focus + .input-label-name .input-content-name,
+.input-form input:valid + .input-label-name .input-content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.input-form input:focus + .input-label-name::after,
+.input-form input:valid + .input-label-name::after {
+  transform: translateX(0%);
+}
+
+.loadAddonOverrides();

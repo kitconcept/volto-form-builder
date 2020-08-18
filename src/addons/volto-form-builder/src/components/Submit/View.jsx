@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { SubmitHandler, SubmitHandlerGet } from '../../actions/index';
+import '../../less/form-builder.less';
 
 const SubmitView = (props) => {
   //This is for fetching the data of the form
@@ -28,7 +29,7 @@ const SubmitView = (props) => {
   return (
     <>
       <div>
-        <Button primary className="submit-block-button view" onClick={onClick}>
+        <Button className="submit-block-button view" onClick={onClick}>
           {props.data.submit}
         </Button>
       </div>

@@ -19,6 +19,9 @@ import SelectView from './Select/View';
 import IntegerEdit from './Integer/Edit';
 import IntegerView from './Integer/View';
 
+import InputMaterialEdit from './Input-Material/Edit';
+import InputMaterialView from './Input-Material/View';
+
 export {
   InputEdit,
   InputView,
@@ -34,4 +37,6 @@ export {
   SelectView,
   IntegerEdit,
   IntegerView,
+  InputMaterialEdit,
+  InputMaterialView,
 };
