@@ -22,6 +22,9 @@ import IntegerView from './Integer/View';
 import InputMaterialEdit from './Input-Material/Edit';
 import InputMaterialView from './Input-Material/View';
 
+import TextareaMaterialEdit from './Textarea-Material/Edit';
+import TextareaMaterialView from './Textarea-Material/View';
+
 export {
   InputEdit,
   InputView,
@@ -39,4 +42,6 @@ export {
   IntegerView,
   InputMaterialEdit,
   InputMaterialView,
+  TextareaMaterialEdit,
+  TextareaMaterialView,
 };

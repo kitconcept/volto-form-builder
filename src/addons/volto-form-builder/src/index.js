@@ -17,6 +17,8 @@ import {
   IntegerView,
   InputMaterialEdit,
   InputMaterialView,
+  TextareaMaterialEdit,
+  TextareaMaterialView,
 } from './components';
 import { formbuilder } from './reducers';
 
@@ -44,6 +46,21 @@ export default function applyConfig(config) {
       group: 'form',
       view: InputMaterialView,
       edit: InputMaterialEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
+    textareaMaterial: {
+      id: 'textareaMaterial',
+      title: 'TextareaMaterial',
+      icon: formSVG,
+      group: 'form',
+      view: TextareaMaterialView,
+      edit: TextareaMaterialEdit,
       restricted: false,
       mostUsed: false,
       sidebarTab: 1,
