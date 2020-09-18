@@ -19,6 +19,8 @@ import {
   InputMaterialView,
   TextareaMaterialEdit,
   TextareaMaterialView,
+  DateEdit,
+  DateView,
 } from './components';
 import { formbuilder } from './reducers';
 
@@ -76,6 +78,21 @@ export default function applyConfig(config) {
       group: 'form',
       view: TextareaView,
       edit: TextareaEdit,
+      restricted: false,
+      mostUsed: false,
+      sidebarTab: 1,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+    },
+    dateTime: {
+      id: 'dateTime',
+      title: 'DateTime',
+      icon: formSVG,
+      group: 'form',
+      view: DateView,
+      edit: DateEdit,
       restricted: false,
       mostUsed: false,
       sidebarTab: 1,

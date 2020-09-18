@@ -25,6 +25,9 @@ import InputMaterialView from './Input-Material/View';
 import TextareaMaterialEdit from './Textarea-Material/Edit';
 import TextareaMaterialView from './Textarea-Material/View';
 
+import DateEdit from './Date/Edit';
+import DateView from './Date/View';
+
 export {
   InputEdit,
   InputView,
@@ -44,4 +47,6 @@ export {
   InputMaterialView,
   TextareaMaterialEdit,
   TextareaMaterialView,
+  DateEdit,
+  DateView,
 };
