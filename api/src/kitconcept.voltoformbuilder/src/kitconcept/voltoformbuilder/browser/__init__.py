@@ -21,8 +21,7 @@ logger = logging.getLogger("kitconcept.voltoformbuilder")
 MAIL_NOTIFICATION_MESSAGE_SITE_ADMINISTRATOR = _(
     u'mail_notification_message_site_administrator',
     default=u'A form on "${title}" '
-            u'has been submitted by ${commentator}\n'
-            u'here: ${link}\n\n'
+            u'has been submitted here: ${link}\n\n'
             u'---\n\n'
             u'${text}\n\n'
             u'---\n\n',
@@ -41,13 +40,17 @@ class FormPost(Service):
             return
 
         subject = translate(_(u'A form has been submitted.'), context=self.context.REQUEST)
+        json = json_body(self.context.REQUEST)
+        text_form_data = ""
+        for key, value in json_body(self.context.REQUEST).items():
+            text_form_data += "{}: {}\n".format(key, value)
         message = translate(
             Message(
                 MAIL_NOTIFICATION_MESSAGE_SITE_ADMINISTRATOR,
                 mapping={
                     'title': safe_unicode(self.context.title),
                     'link': self.context.absolute_url(),
-                    'text': "TODO: FORM DATA",
+                    'text': text_form_data,
                 },
             ),
             context=self.context,
