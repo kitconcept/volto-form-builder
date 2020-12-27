@@ -36,6 +36,9 @@
   "keywords": [
     "Volto"
   ],
+  "engines": {
+    "node": "^12 || ^14"
+  },
   "author": "Alok Kumar | kitconcept GmbH",
   "license": "MIT",
   "bugs": {
