@@ -100,9 +100,9 @@ class FormSubmitFunctionalTest(unittest.TestCase):
         # self.assertTrue(
         #     'http://nohost/plone/d=\noc1/view#{0}'.format(comment_id)
         #     in msg)
-        # self.assertTrue('Comment text' in msg)
-        # self.assertFalse('Approve comment' in msg)
-        # self.assertFalse('Delete comment' in msg)
+        self.assertTrue('email: john@example.com\n' in msg)
+        self.assertTrue('subject: hello world\n' in msg)
+        self.assertTrue('comment: lorem ipsum\n' in msg)
 
     # def test_form_post(self):
     #     data = {

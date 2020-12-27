@@ -82,6 +82,10 @@ context('Form Blocks Tests', () => {
     cy.get('#page-document button.submit-block-button').contains('Send');
 
     cy.checkA11y();
+
+    // click send button
+    cy.get('#page-document button.submit-block-button').click();
+
   });
 
 });
