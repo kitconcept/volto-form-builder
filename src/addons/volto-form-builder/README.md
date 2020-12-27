@@ -42,4 +42,22 @@ Form Actions
 
 - [ ] As editor, I can store submitted form data as CSV
 
+# UX/UI Guidelines
 
+* https://www.nngroup.com/articles/errors-forms-design-guidelines/
+* https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html
+* https://research.google/pubs/pub42513/
+* https://storage.googleapis.com/pub-tools-public-publication-data/pdf/42513.pdf
+* https://www.smashingmagazine.com/2011/11/extensive-guide-web-form-usability/
+* Material Design Text fields (https://material.io/components/text-fields)
+
+## Books
+
+* Web Form Design: Filling in the Blanks (https://www.lukew.com/resources/web_form_design.asp)
+* Form Design Patterns (https://www.smashingmagazine.com/printed-books/form-design-patterns/)
+
+# Accessibility
+
+* https://www.w3.org/WAI/tutorials/forms/
+* https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/forms
+* https://medium.com/net-magazine/create-simple-accessible-web-forms-535cd253dee2
