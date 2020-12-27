@@ -32,7 +32,7 @@ context('Form Blocks Tests', () => {
   });
 
 
-  it('As editor I can add a submit buttonto a form', function () {
+  it('As editor I can add a submit button to a form', function () {
     // add submit block
     cy.get('.block.inner.text .public-DraftEditor-content').click();
     cy.get('button.block-add-button').click();
@@ -70,6 +70,9 @@ context('Form Blocks Tests', () => {
 
     // then the page view should contain a submit button with the label 'Send'
     cy.get('#page-document button.submit-block-button').contains('Send');
+
+    // click send button
+    cy.get('#page-document button.submit-block-button').click();
   });
 
 });
