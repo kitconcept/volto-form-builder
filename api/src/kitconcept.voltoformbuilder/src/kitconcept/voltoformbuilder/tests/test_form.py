@@ -66,23 +66,6 @@ class FormSubmitFunctionalTest(unittest.TestCase):
         sm.registerUtility(aq_base(self.portal._original_MailHost),
                            provided=IMailHost)
 
-    def test_form_post(self):
-        data = {
-            "email": "john@example.com",
-            "subject": "hello world",
-            "comment": "lorem ipsum",
-        }
-        response = requests.post(
-            self.doc.absolute_url() + "/@form",
-            headers={"Accept": "application/json", "Content-Type": "application/json"},
-            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
-            json=data,
-        )
-        transaction.commit()
-
-        self.assertEqual(201, response.status_code)
-        self.assertEqual(data, self.doc.data)
-
     def test_form_post_sends_email_to_portal_administrator(self):
         data = {
             "email": "john@example.com",
@@ -121,69 +104,86 @@ class FormSubmitFunctionalTest(unittest.TestCase):
         # self.assertFalse('Approve comment' in msg)
         # self.assertFalse('Delete comment' in msg)
 
-    def test_form_post_appends_data(self):
-        self.doc.data = [
-            {
-                "email": "john@example.com",
-                "subject": "hello world",
-                "comment": "lorem ipsum",
-            }
-        ]
-        transaction.commit()
+    # def test_form_post(self):
+    #     data = {
+    #         "email": "john@example.com",
+    #         "subject": "hello world",
+    #         "comment": "lorem ipsum",
+    #     }
+    #     response = requests.post(
+    #         self.doc.absolute_url() + "/@form",
+    #         headers={"Accept": "application/json", "Content-Type": "application/json"},
+    #         auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+    #         json=data,
+    #     )
+    #     transaction.commit()
 
-        newdata = {
-            "email": "jane@example.com",
-            "subject": "hi from jane",
-            "comment": "hi there",
-        }
-        response = requests.post(
-            self.doc.absolute_url() + "/@form",
-            headers={"Accept": "application/json", "Content-Type": "application/json"},
-            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
-            json=newdata,
-        )
-        transaction.commit()
+    #     self.assertEqual(201, response.status_code)
+    #     self.assertEqual(data, self.doc.data)
 
-        self.assertEqual(201, response.status_code)
-        # todo: check that data is appended
+    # def test_form_post_appends_data(self):
+    #     self.doc.data = [
+    #         {
+    #             "email": "john@example.com",
+    #             "subject": "hello world",
+    #             "comment": "lorem ipsum",
+    #         }
+    #     ]
+    #     transaction.commit()
 
-    def test_get_form_data(self):
-        self.doc.data = [
-            {
-                "email": "john@example.com",
-                "subject": "hello world",
-                "comment": "lorem ipsum",
-            },
-            {
-                "email": "jane@example.com",
-                "subject": "hi from jane",
-                "comment": "hi there",
-            },
-        ]
-        transaction.commit()
+    #     newdata = {
+    #         "email": "jane@example.com",
+    #         "subject": "hi from jane",
+    #         "comment": "hi there",
+    #     }
+    #     response = requests.post(
+    #         self.doc.absolute_url() + "/@form",
+    #         headers={"Accept": "application/json", "Content-Type": "application/json"},
+    #         auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+    #         json=newdata,
+    #     )
+    #     transaction.commit()
 
-    def test_get_form_data_as_csv(self):
-        self.doc.data = [
-            {
-                "email": "john@example.com",
-                "subject": "hello world",
-                "comment": "lorem ipsum",
-            },
-            {
-                "email": "jane@example.com",
-                "subject": "hi from jane",
-                "comment": "hi there",
-            },
-        ]
-        transaction.commit()
+    #     self.assertEqual(201, response.status_code)
+    #     # todo: check that data is appended
 
-        response = requests.get(
-            self.doc.absolute_url() + "/@form",
-            headers={"Accept": "text/csv"},
-            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
-        )
-        self.assertEqual(200, response.status_code)
-        self.assertEqual('attachment; filename=form-data.csv', response.headers.get('Content-Disposition'))
-        self.assertEqual('80', response.headers.get('Content-Length'))
-        self.assertEqual('text/csv; charset=utf-8', response.headers.get('Content-Type'))
-        self.assertEqual('john@example.com,hello world,lorem ipsum\r\njane@example.com,hi from jane,hi there', response.text)
+    # def test_get_form_data(self):
+    #     self.doc.data = [
+    #         {
+    #             "email": "john@example.com",
+    #             "subject": "hello world",
+    #             "comment": "lorem ipsum",
+    #         },
+    #         {
+    #             "email": "jane@example.com",
+    #             "subject": "hi from jane",
+    #             "comment": "hi there",
+    #         },
+    #     ]
+    #     transaction.commit()
+
+    # def test_get_form_data_as_csv(self):
+    #     self.doc.data = [
+    #         {
+    #             "email": "john@example.com",
+    #             "subject": "hello world",
+    #             "comment": "lorem ipsum",
+    #         },
+    #         {
+    #             "email": "jane@example.com",
+    #             "subject": "hi from jane",
+    #             "comment": "hi there",
+    #         },
+    #     ]
+    #     transaction.commit()
+
+    #     response = requests.get(
+    #         self.doc.absolute_url() + "/@form",
+    #         headers={"Accept": "text/csv"},
+    #         auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
+    #     )
+    #     self.assertEqual(200, response.status_code)
+    #     self.assertEqual('attachment; filename=form-data.csv', response.headers.get('Content-Disposition'))
+    #     self.assertEqual('80', response.headers.get('Content-Length'))
+    #     self.assertEqual('text/csv; charset=utf-8', response.headers.get('Content-Type'))
+    #     self.assertEqual('john@example.com,hello world,lorem ipsum\r\njane@example.com,hi from jane,hi there', response.text)

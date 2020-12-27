@@ -3,7 +3,14 @@ from io import StringIO
 from kitconcept.voltoformbuilder import _
 from plone.rest import Service
 from plone.restapi.deserializer import json_body
+from zope.component import getUtility
+from Products.CMFPlone.interfaces import IMailSchema
+from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
+from zope.i18nmessageid import Message
+from Products.CMFPlone.utils import safe_unicode
 from zope.i18n import translate
+from smtplib import SMTPException
 
 import csv
 import logging
@@ -23,15 +30,8 @@ MAIL_NOTIFICATION_MESSAGE_SITE_ADMINISTRATOR = _(
 
 class FormPost(Service):
     def render(self):
-        # todo: data needs to be appended
-        self.context.data = json_body(self.request)
-        transaction.commit()
-        logger.info("FORM: POST DATA")
-        return self.request.response.setStatus(201)
-
-    def send_email(self):
         # get sender from mailhost settings
-        mail_host = getToolByName(obj, 'MailHost')
+        mail_host = getToolByName(self.context, 'MailHost')
         registry = getUtility(IRegistry)
         mail_settings = registry.forInterface(IMailSchema, prefix='plone')
         sender = mail_settings.email_from_address
@@ -40,7 +40,7 @@ class FormPost(Service):
         if not sender:
             return
 
-        subject = translate(_(u'A form has been submitted.'), context=obj.REQUEST)
+        subject = translate(_(u'A form has been submitted.'), context=self.context.REQUEST)
         message = translate(
             Message(
                 MAIL_NOTIFICATION_MESSAGE_SITE_ADMINISTRATOR,
@@ -54,6 +54,7 @@ class FormPost(Service):
         )
 
         # Send email
+        mto = sender
         try:
             mail_host.send(message, mto, sender, subject, charset='utf-8')
         except SMTPException as e:
@@ -66,6 +67,8 @@ class FormPost(Service):
                 mto,
                 message,
             )
+        transaction.commit()
+        return self.request.response.setStatus(201)
 
 
 class FormGet(Service):
