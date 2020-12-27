@@ -16,8 +16,7 @@ An interactive form builder for Volto, that allows editors to assemble forms via
 - [x] As editor, I can add a single-line text field to a form
 - [x] As editor, I can add a multi-line text field to a form
 - [x] As editor, I can add an email field to a form
-- [ ] As editor, I can add a RichText field to a form
-- [ ] As editor, I can add a send-email action to a form
+- [x] As editor, I can add a send-email action to a form
 - [x] As anonymous user, I can see and submit a form
 
 ## Additional Fields
@@ -29,6 +28,7 @@ An interactive form builder for Volto, that allows editors to assemble forms via
 - [ ] As editor, I can add an integer field to a form
 - [ ] As editor, I can add an file field to a form
 - [ ] As editor, I can add an image field to a form
+- [ ] As editor, I can add a RichText field to a form
 
 ## Misc
 
