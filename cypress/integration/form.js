@@ -19,6 +19,8 @@ context('Form Blocks Tests', () => {
   });
 
   it('As editor I can add a single-line text field to a form', function () {
+    cy.injectAxe();
+
     // add input field block
     cy.get('.block.inner.text .public-DraftEditor-content').click();
     cy.get('button.block-add-button').click();
@@ -29,10 +31,14 @@ context('Form Blocks Tests', () => {
 
     // then the page view should contain input label
     cy.get('#field-input-form-view label').contains('enter input label');
+
+    cy.checkA11y();
   });
 
 
-  it('As editor I can add a submit buttonto a form', function () {
+  it('As editor I can add a submit button to a form', function () {
+    cy.injectAxe();
+
     // add submit block
     cy.get('.block.inner.text .public-DraftEditor-content').click();
     cy.get('button.block-add-button').click();
@@ -47,9 +53,13 @@ context('Form Blocks Tests', () => {
 
     // then the page view should contain a submit button with the label 'Send'
     cy.get('#page-document button.submit-block-button').contains('Send');
+
+    cy.checkA11y();
   });
 
   it('As system I send an email to the site administrator when an anonymous user submits a form', function () {
+
+    cy.injectAxe();
     // add input field block
     cy.get('.block.inner.text .public-DraftEditor-content').click();
     cy.get('button.block-add-button').click();
@@ -70,6 +80,8 @@ context('Form Blocks Tests', () => {
 
     // then the page view should contain a submit button with the label 'Send'
     cy.get('#page-document button.submit-block-button').contains('Send');
+
+    cy.checkA11y();
   });
 
 });
