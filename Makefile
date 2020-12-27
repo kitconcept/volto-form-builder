@@ -38,7 +38,7 @@ start-frontend:  ## Start React Frontend
 .PHONY: build-backend
 build-backend:  ## Create virtualenv and run buildout
 	@echo "$(GREEN)==> Setup Build$(RESET)"
-	(cd api && python3 -m venv .)
+	(cd api && python3.7 -m venv .)
 	(cd api && bin/pip install -r requirements.txt --upgrade)
 	(cd api && bin/buildout)
 

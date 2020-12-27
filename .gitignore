@@ -24,7 +24,6 @@ api/develop-eggs/
 api/lib/
 api/parts/
 api/pyvenv.cfg
-api/src/
 api/var/
 api/eggs/
 api/lib64
