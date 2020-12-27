@@ -29,7 +29,7 @@ const SubmitSidebar = (props) => {
       </header>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="submit-button-label"
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={props.data.submit}
@@ -43,7 +43,7 @@ const SubmitSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="submit-button-email"
           title={props.intl.formatMessage(messages.email)}
           required={true}
           value={value}

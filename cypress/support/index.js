@@ -12,9 +12,16 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+import 'cypress-file-upload';
+import './commands';
+import 'cypress-axe';
 
-// Import commands.js using ES2015 syntax:
-import './commands'
+beforeEach(function () {
+  cy.log('Setting up API fixture');
+  cy.exec('yarn cy:test:fixture:setup');
+});
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+afterEach(function () {
+  cy.log('Tearing down API fixture');
+  cy.exec('yarn cy:test:fixture:teardown');
+});
