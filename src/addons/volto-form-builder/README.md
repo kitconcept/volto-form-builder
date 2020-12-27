@@ -8,15 +8,17 @@
 
 An interactive form builder for Volto, that allows editors to assemble forms via drag and drop.
 
-# Features
+# Roadmap
 
-## Basics
+## MVP
 
 - [x] As editor, I can add a form
 - [x] As editor, I can add a single-line text field to a form
 - [x] As editor, I can add a multi-line text field to a form
 - [x] As editor, I can add an email field to a form
 - [ ] As editor, I can add a RichText field to a form
+- [ ] As editor, I can add a send-email action to a form
+- [x] As anonymous user, I can see and submit a form
 
 ## Additional Fields
 
@@ -35,9 +37,9 @@ An interactive form builder for Volto, that allows editors to assemble forms via
 - [ ] As editor, I can edit the text and links of the submit/cancel buttons of a form
 - [ ] As editor, I can add a regexp validation to a form field
 Form Actions
-- [ ] As editor, I can add a send-email action to a form
+
+## CSV Data
+
 - [ ] As editor, I can store submitted form data as CSV
 
-## Form View
 
-- [x] As anonymous user, I can see and submit a form
