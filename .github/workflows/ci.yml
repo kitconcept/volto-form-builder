@@ -66,6 +66,13 @@ jobs:
         env:
           CI: true
 
+      # Backend Tests
+      - name: backend tests
+        working-directory: api
+        run: bin/test
+        env:
+          CI: true
+
       # Run Cypress tests
       - name: Cypress acceptance tests
         run: yarn ci:cypress:run
