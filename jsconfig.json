@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@kitconcept/volto-form-builder": [
+                "addons/volto-form-builder/src"
+            ]
+        },
+        "baseUrl": "src"
+    }
+}
