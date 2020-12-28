@@ -25,3 +25,4 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 import '@plone/volto/cypress/support/commands';
+import '@testing-library/cypress/add-commands';
