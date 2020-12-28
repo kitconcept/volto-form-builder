@@ -3,31 +3,31 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-kitconcept.voltoformbuilder
+voltoformbuilder
 ==============================================================================
 
-.. image:: https://travis-ci.org/kitconcept/kitconcept.voltoformbuilder.svg?branch=master
-    :target: https://travis-ci.org/kitconcept/kitconcept.voltoformbuilder
+.. image:: https://travis-ci.org/kitconcept/voltoformbuilder.svg?branch=master
+    :target: https://travis-ci.org/kitconcept/voltoformbuilder
 
-.. image:: https://img.shields.io/pypi/status/kitconcept.voltoformbuilder.svg
-    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder/
+.. image:: https://img.shields.io/pypi/status/voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/voltoformbuilder/
     :alt: Egg Status
 
-.. image:: https://img.shields.io/pypi/v/kitconcept.voltoformbuilder.svg
-    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder
+.. image:: https://img.shields.io/pypi/v/voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/voltoformbuilder
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/l/kitconcept.voltoformbuilder.svg
-    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder
+.. image:: https://img.shields.io/pypi/l/voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/voltoformbuilder
     :alt: License
 
 |
 
-.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.voltoformbuilder/master/kitconcept.png
+.. image:: https://raw.githubusercontent.com/kitconcept/voltoformbuilder/master/kitconcept.png
    :alt: kitconcept
    :target: https://kitconcept.com/
 
-kitconcept.voltoformbuilder allows to submit form data on a content object that implements the IBlocks behavior.
+voltoformbuilder allows to submit form data on a content object that implements the IBlocks behavior.
 
 Features
 --------
@@ -91,14 +91,14 @@ This product has been translated into
 Installation
 ------------
 
-Install kitconcept.voltoformbuilder by adding it to your buildout::
+Install voltoformbuilder by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        kitconcept.voltoformbuilder
+        voltoformbuilder
 
 
 and then running ``bin/buildout``
@@ -107,8 +107,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/kitconcept.voltoformbuilder/issues
-- Source Code: https://github.com/collective/kitconcept.voltoformbuilder
+- Issue Tracker: https://github.com/collective/voltoformbuilder/issues
+- Source Code: https://github.com/collective/voltoformbuilder
 - Documentation: https://docs.plone.org/foo/bar
 
 

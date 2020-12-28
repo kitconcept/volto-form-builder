@@ -15,7 +15,7 @@ from zope.component import getSiteManager
 from zope.component import getUtility
 from zope.component import queryUtility
 
-from kitconcept.voltoformbuilder.testing import (
+from voltoformbuilder.testing import (
     KITCONCEPT_VOLTOFORMBUILDER_FUNCTIONAL_TESTING,
 )  # noqa
 

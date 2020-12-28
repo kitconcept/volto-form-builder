@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from kitconcept.voltoformbuilder.testing import (
+from voltoformbuilder.testing import (
     KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING,
 )  # noqa
 from plone import api
@@ -12,7 +12,7 @@ import unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that kitconcept.voltoformbuilder is properly installed."""
+    """Test that voltoformbuilder is properly installed."""
 
     layer = KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING
 
@@ -22,14 +22,14 @@ class TestSetup(unittest.TestCase):
         self.installer = get_installer(self.portal)
 
     def test_product_installed(self):
-        """Test if kitconcept.voltoformbuilder is installed."""
+        """Test if voltoformbuilder is installed."""
         self.assertTrue(
-            self.installer.is_product_installed("kitconcept.voltoformbuilder")
+            self.installer.is_product_installed("voltoformbuilder")
         )
 
     def test_browserlayer(self):
         """Test that IPlonevoltoformbuilderLayer is registered."""
-        from kitconcept.voltoformbuilder.interfaces import IPlonevoltoformbuilderLayer
+        from voltoformbuilder.interfaces import IPlonevoltoformbuilderLayer
         from plone.browserlayer import utils
 
         self.assertIn(IPlonevoltoformbuilderLayer, utils.registered_layers())
@@ -44,18 +44,18 @@ class TestUninstall(unittest.TestCase):
         self.installer = get_installer(self.portal, self.layer["request"])
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        self.installer.uninstallProducts(["kitconcept.voltoformbuilder"])
+        self.installer.uninstallProducts(["voltoformbuilder"])
         setRoles(self.portal, TEST_USER_ID, roles_before)
 
     def test_product_uninstalled(self):
-        """Test if kitconcept.voltoformbuilder is cleanly uninstalled."""
+        """Test if voltoformbuilder is cleanly uninstalled."""
         self.assertFalse(
-            self.installer.isProductInstalled("kitconcept.voltoformbuilder")
+            self.installer.isProductInstalled("voltoformbuilder")
         )
 
     def test_browserlayer_removed(self):
         """Test that IPlonevoltoformbuilderLayer is removed."""
-        from kitconcept.voltoformbuilder.interfaces import IPlonevoltoformbuilderLayer
+        from voltoformbuilder.interfaces import IPlonevoltoformbuilderLayer
         from plone.browserlayer import utils
 
         self.assertNotIn(IPlonevoltoformbuilderLayer, utils.registered_layers())

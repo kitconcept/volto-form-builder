@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from io import StringIO
-from kitconcept.voltoformbuilder import _
+from voltoformbuilder import _
 from plone.rest import Service
 from plone.restapi.deserializer import json_body
 from zope.component import getUtility
@@ -16,7 +16,7 @@ import csv
 import logging
 import transaction
 
-logger = logging.getLogger("kitconcept.voltoformbuilder")
+logger = logging.getLogger("voltoformbuilder")
 
 MAIL_NOTIFICATION_MESSAGE_SITE_ADMINISTRATOR = _(
     u'mail_notification_message_site_administrator',

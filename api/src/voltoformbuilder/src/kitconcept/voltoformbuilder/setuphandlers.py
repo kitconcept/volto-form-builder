@@ -7,7 +7,7 @@ from zope.interface import implementer
 class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller"""
-        return ["kitconcept.voltoformbuilder:uninstall"]
+        return ["voltoformbuilder:uninstall"]
 
 
 def post_install(context):

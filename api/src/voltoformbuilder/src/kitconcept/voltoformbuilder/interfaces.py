@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from kitconcept.voltoformbuilder import _
+from voltoformbuilder import _
 from plone.app.textfield import RichText
 from plone.schema import Email
 from zope import schema
