@@ -37,7 +37,7 @@ const TextAreaSidebar = (props) => {
       </header>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="textarea-label"
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
@@ -51,7 +51,7 @@ const TextAreaSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="textarea-placeholder"
           title={props.intl.formatMessage(messages.placeholder)}
           value={props.data.placeholder}
           onChange={(event, value) => {
@@ -64,7 +64,7 @@ const TextAreaSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="textarea-error-message"
           title={props.intl.formatMessage(messages.customErrorMessage)}
           value={props.data.customErrorMessage}
           onChange={(event, value) => {
@@ -77,7 +77,7 @@ const TextAreaSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-textarea-data">
         <CheckboxWidget
-          id="external"
+          id="textarea-checkbox"
           title={props.intl.formatMessage(messages.required)}
           value={props.data.validation?.required}
           onChange={(event, value) => {
