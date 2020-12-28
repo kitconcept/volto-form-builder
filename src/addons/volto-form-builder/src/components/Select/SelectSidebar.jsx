@@ -29,7 +29,6 @@ const messages = defineMessages({
 const SelectSidebar = (props) => {
   const value = props.data.label;
   const choice = props.data.choices;
-  console.log(value, choice);
   return (
     <Segment.Group raised>
       <header className="header pulled">
