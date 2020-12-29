@@ -20,7 +20,7 @@ const EmailView = ({
     <>
       <Form>
         <TextWidget
-          id="input-edit"
+          id="email-form-view"
           title="Email"
           required={true}
           value={email}

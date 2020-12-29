@@ -27,7 +27,7 @@ const TextareaView = ({
   return (
     <Form>
       <TextareaWidget
-        id="external"
+        id="textarea-form-view"
         title={data.label}
         required={data.validation?.required}
         value={reducerData?.value || ''}

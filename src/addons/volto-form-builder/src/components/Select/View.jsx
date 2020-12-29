@@ -31,7 +31,7 @@ const SelectView = ({
     <>
       <Form>
         <SelectWidget
-          id="external"
+          id="select-form-view"
           title={data.label}
           value={value}
           choices={choices}
