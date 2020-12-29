@@ -1,6 +1,9 @@
 const checkValidity = (value, rules) => {
   let isValid = true;
   if (rules) {
+    if (value === 'undefined') {
+      return false;
+    }
     if (rules.required) {
       isValid = value.trim() !== '' && isValid;
     }
@@ -14,7 +17,6 @@ const checkValidity = (value, rules) => {
       const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
       isValid = pattern.test(value) && isValid;
     }
-
     if (rules.isNumeric) {
       const pattern = /^\d+$/;
       isValid = pattern.test(value) && isValid;
