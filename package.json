@@ -110,7 +110,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "7.1.0"
+    "@plone/volto": "10.6.1"
   },
   "devDependencies": {
     "@testing-library/cypress": "7.0.3",

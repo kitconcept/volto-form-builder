@@ -13,8 +13,8 @@ const messages = defineMessages({
     defaultMessage: 'Label',
   },
   choices: {
-    id: 'Choices',
-    defineMessages: 'Choices',
+    id: 'Enter one value per line',
+    defineMessages: 'Enter one value per line',
   },
   required: {
     id: 'Required',
