@@ -31,7 +31,7 @@ const SelectView = ({
     <>
       <Form>
         <SelectWidget
-          id="select-form-view"
+          id={`select-form-view-${data.label}`}
           title={data.label}
           value={value}
           choices={choices}

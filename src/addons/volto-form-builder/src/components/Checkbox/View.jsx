@@ -18,7 +18,7 @@ const CheckboxView = ({
     <>
       <Form>
         <CheckboxWidget
-          id="checkbox-form-view"
+          id={`checkbox-form-view-${data.label}`}
           title={data.label}
           value={formbuilder[path]?.[blockid]?.value || false}
           onChange={(id, value) => {

@@ -27,7 +27,7 @@ const TextareaView = ({
   return (
     <Form>
       <TextareaWidget
-        id="textarea-form-view"
+        id={`textarea-form-view-${data.label}`}
         title={data.label}
         required={data.validation?.required}
         value={reducerData?.value || ''}
