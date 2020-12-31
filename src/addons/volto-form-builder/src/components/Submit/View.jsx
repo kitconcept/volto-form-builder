@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { setFormbuilderInputValue } from '../../actions/index';
+import {
+  setFormbuilderInputValue,
+  SubmitHandler,
+  SubmitHandlerGet,
+} from '../../actions/index';
 
 const SubmitView = (props) => {
   //This is for fetching the data of the form
@@ -21,10 +25,16 @@ const SubmitView = (props) => {
             ...data,
             touch: true,
           });
-          return;
+          // return;
         }
       }
     }
+    props.SubmitHandler(props.path, {
+      email: 'jane@example.com',
+      subject: 'hi from alok',
+      comment: 'hi there',
+    });
+    props.SubmitHandlerGet(props.path);
     if (isValid) {
       console.log(JSON.stringify(values));
     } else {
@@ -50,5 +60,5 @@ export default connect(
       formbuilder: state.formbuilder,
     };
   },
-  { setFormbuilderInputValue },
+  { setFormbuilderInputValue, SubmitHandler, SubmitHandlerGet },
 )(SubmitView);
