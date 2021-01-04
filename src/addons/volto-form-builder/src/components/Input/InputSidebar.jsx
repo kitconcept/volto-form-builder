@@ -33,7 +33,7 @@ const InputSidebar = (props) => {
       </header>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="input-label"
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}
@@ -47,7 +47,7 @@ const InputSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="input-placeholder"
           title={props.intl.formatMessage(messages.placeholder)}
           value={props.data.placeholder}
           onChange={(event, value) => {
@@ -60,7 +60,7 @@ const InputSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="input-error-message"
           title={props.intl.formatMessage(messages.customErrorMessage)}
           value={props.data.customErrorMessage}
           onChange={(event, value) => {
@@ -73,7 +73,7 @@ const InputSidebar = (props) => {
       </Segment>
       <Segment className="form sidebar-image-data">
         <CheckboxWidget
-          id="external"
+          id="input-required"
           title={props.intl.formatMessage(messages.required)}
           value={props.data.validation?.required}
           onChange={(event, value) => {

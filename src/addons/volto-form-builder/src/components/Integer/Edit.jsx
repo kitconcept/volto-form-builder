@@ -11,7 +11,7 @@ const IntegerEdit = (props) => {
     <>
       <Form>
         <TextIntegerNumber
-          id="integer-edit"
+          id="integer-form-edit"
           title={props.data.label}
           required={true}
           value={value}

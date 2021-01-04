@@ -7,7 +7,7 @@ const EmailEdit = (props) => {
     <>
       <Form>
         <TextWidget
-          id="input-edit"
+          id="email-form-edit"
           title="Email"
           required={true}
           placeholder="Enter Your Email"

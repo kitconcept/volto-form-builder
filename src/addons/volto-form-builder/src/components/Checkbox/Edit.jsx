@@ -8,7 +8,7 @@ const CheckboxEdit = (props) => {
     <>
       <Form>
         <CheckboxWidget
-          id="external"
+          id={`checkbox-form-view-${props.data.label}`}
           title={props.data.label}
           value={false}
           onChange={() => {}}
