@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { setFormbuilderInputValue } from '../../actions/index';
+import {
+  setFormbuilderInputValue,
+  SubmitHandler,
+  SubmitHandlerGet,
+} from '../../actions/index';
 
 const SubmitView = (props) => {
   //This is for fetching the data of the form
@@ -10,7 +14,6 @@ const SubmitView = (props) => {
   // }, []);
   const values = props.formbuilder[props.path] || {};
   let isValid = true;
-  let labels = [];
   const onClick = () => {
     for (let keys of Object.keys(values)) {
       if (values[keys].validation?.required) {
@@ -25,13 +28,14 @@ const SubmitView = (props) => {
         }
       }
     }
+
     if (isValid) {
-      console.log(JSON.stringify(values));
-    } else {
-      console.log('Please fill the form Properly', JSON.stringify(labels));
+      let data = {};
+      for (let keys of Object.keys(values)) {
+        data[values[keys].label] = values[keys].value;
+      }
+      props.SubmitHandler(props.path, data);
     }
-    // This is for submiting the data of the form
-    // props.SubmitHandler(props.path, props.formbuilder[props.path]);
   };
   return (
     <>
@@ -50,5 +54,5 @@ export default connect(
       formbuilder: state.formbuilder,
     };
   },
-  { setFormbuilderInputValue },
+  { setFormbuilderInputValue, SubmitHandler, SubmitHandlerGet },
 )(SubmitView);
