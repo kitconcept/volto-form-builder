@@ -15,7 +15,7 @@ long_description = "\n\n".join(
 
 
 setup(
-    name="voltoformbuilder",
+    name="volto-form-builder",
     version="1.0a1",
     description="Form Generator for the Plone CMS",
     long_description=long_description,
@@ -36,6 +36,7 @@ setup(
     license="GPL version 2",
     packages=find_packages("src", exclude=["ez_setup"]),
     package_dir={"": "src"},
+    py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
