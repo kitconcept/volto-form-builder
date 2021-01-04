@@ -14,7 +14,6 @@ const SubmitView = (props) => {
   // }, []);
   const values = props.formbuilder[props.path] || {};
   let isValid = true;
-  let labels = [];
   const onClick = () => {
     for (let keys of Object.keys(values)) {
       if (values[keys].validation?.required) {
@@ -25,23 +24,18 @@ const SubmitView = (props) => {
             ...data,
             touch: true,
           });
-          // return;
+          return;
         }
       }
     }
-    props.SubmitHandler(props.path, {
-      email: 'jane@example.com',
-      subject: 'hi from alok',
-      comment: 'hi there',
-    });
-    props.SubmitHandlerGet(props.path);
+
     if (isValid) {
-      console.log(JSON.stringify(values));
-    } else {
-      console.log('Please fill the form Properly', JSON.stringify(labels));
+      let data = {};
+      for (let keys of Object.keys(values)) {
+        data[values[keys].label] = values[keys].value;
+      }
+      props.SubmitHandler(props.path, data);
     }
-    // This is for submiting the data of the form
-    // props.SubmitHandler(props.path, props.formbuilder[props.path]);
   };
   return (
     <>
