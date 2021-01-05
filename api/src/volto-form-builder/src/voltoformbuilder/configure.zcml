@@ -7,6 +7,9 @@
   <i18n:registerTranslations directory="locales" />
 
   <!-- <includeDependencies package="." /> -->
+  <include package="plone.app.dexterity" />
+  <include package="plone.rest" />
+  <include package="plone.restapi" />
 
   <include package=".browser" />
 
