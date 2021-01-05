@@ -7,12 +7,11 @@ const SelectEdit = (props) => {
   const choices = props.data.choices?.split(',').reduce((acc, value) => {
     return [...acc, [`${value}`, value]];
   }, []);
-  console.log('this is edit', choices);
   return (
     <>
       <Form>
         <SelectWidget
-          id="external"
+          id={`select-form-edit-${props.data.label}`}
           title={props.data.label}
           choices={choices}
           onChange={() => {}}

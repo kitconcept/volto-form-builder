@@ -21,7 +21,7 @@ const CheckboxSidebar = (props) => {
       </header>
       <Segment className="form sidebar-image-data">
         <TextWidget
-          id="external"
+          id="checkbox-label"
           title={props.intl.formatMessage(messages.label)}
           required={true}
           value={value}

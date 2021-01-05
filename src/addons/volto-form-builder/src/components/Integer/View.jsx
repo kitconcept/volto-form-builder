@@ -18,7 +18,7 @@ const IntegerView = ({
     <>
       <Form>
         <TextIntegerNumber
-          id="integer-edit"
+          id={`integer-edit-${data.label}`}
           title={data.label}
           required={true}
           placeholder={data.placeholder}

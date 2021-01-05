@@ -27,7 +27,7 @@ const InputView = ({
   return (
     <Form>
       <TextWidget
-        id="input-form-view"
+        id={`input-form-view-${data.label}`}
         title={data.label?.length > 0 ? data.label : 'enter input label'}
         required={data.validation?.required}
         value={reducerData?.value || ''}

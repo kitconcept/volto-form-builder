@@ -8,7 +8,7 @@ const InputEdit = (props) => {
     <>
       <Form>
         <TextWidget
-          id="input-edit"
+          id="input-form-edit"
           title={
             props.data.label?.length > 0
               ? props.data.label

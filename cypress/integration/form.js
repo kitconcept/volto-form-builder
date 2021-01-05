@@ -13,7 +13,7 @@ context('Form Blocks Tests', () => {
     cy.waitForResourceToLoad('@breadcrumbs');
     cy.waitForResourceToLoad('@actions');
     cy.waitForResourceToLoad('@types');
-    cy.waitForResourceToLoad('my-page?fullobjects');
+    // cy.waitForResourceToLoad('my-page?fullobjects');
     cy.navigate('/my-page/edit');
     cy.get(`.block.title [data-contents]`);
   });
@@ -24,11 +24,12 @@ context('Form Blocks Tests', () => {
     cy.get('button.block-add-button').click();
     cy.get('.blocks-chooser > .accordion > .title').contains('Form').click();
     cy.get('.ui.basic.icon.button.inputBlock').contains('Input').click();
+    cy.get('input[id=field-input-label]').type('Name');
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain input label
-    cy.get('#field-input-form-view label').contains('enter input label');
+    cy.get('#field-input-form-view-Name label').contains('Name');
   });
 
   it('As editor I can add a submit button to a form', () => {
@@ -84,13 +85,14 @@ context('Form Blocks Tests', () => {
     cy.get('button.block-add-button').click();
     cy.findByText('Form').click();
     cy.findByText('Textarea').click();
-    cy.get('input[id=field-textarea-label]').type('My name');
+    cy.get('input[id=field-textarea-label]').type('Description');
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain a textarea with label 'My name'
-    cy.findByText('My name').should('exist');
-    cy.get('#field-textarea-form-view label').contains('My name');
+    cy.get('#field-textarea-form-view-Description label').contains(
+      'Description',
+    );
   });
 
   it('As editor I can add a email field to a form', () => {
@@ -103,7 +105,6 @@ context('Form Blocks Tests', () => {
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain a email field with label 'Email'
-    cy.findByText('Email').should('exist');
     cy.get('#field-email-form-view').contains('Email');
   });
 
@@ -113,13 +114,12 @@ context('Form Blocks Tests', () => {
     cy.get('button.block-add-button').click();
     cy.findByText('Form').click();
     cy.findByText('Checkbox').click();
-    cy.get('input[id=field-external]').type('Checkbox');
+    cy.get('input[id=field-checkbox-label]').type('Checkbox');
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain a checkbox field with label 'Checkbox'
-    cy.findByText('Checkbox').should('exist');
-    cy.get('#field-checkbox-form-view').contains('Checkbox');
+    cy.get('#field-checkbox-form-view-Checkbox').contains('Checkbox');
   });
 
   it('As editor I can add a Select field to a form', () => {
@@ -133,7 +133,6 @@ context('Form Blocks Tests', () => {
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain a select field with label 'Select'
-    cy.findByText('Select').should('exist');
-    cy.get('#field-select-form-view').contains('Select');
+    cy.get('#field-select-form-view-Select').contains('Select');
   });
 });
