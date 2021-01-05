@@ -17,7 +17,7 @@ const SelectView = ({
   const blockid = id;
   const [value, setValue] = React.useState('');
   const reducerData = formbuilder[path]?.[blockid];
-  const choices = data.choices?.split(',').reduce((acc, value) => {
+  const choices = data.choices?.split('\n').reduce((acc, value) => {
     return [...acc, [`${value}`, value]];
   }, []);
   useEffect(() => {

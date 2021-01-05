@@ -4,7 +4,7 @@ import { Form } from 'semantic-ui-react';
 import SelectSidebar from './SelectSidebar';
 
 const SelectEdit = (props) => {
-  const choices = props.data.choices?.split(',').reduce((acc, value) => {
+  const choices = props.data.choices?.split('\n').reduce((acc, value) => {
     return [...acc, [`${value}`, value]];
   }, []);
   return (

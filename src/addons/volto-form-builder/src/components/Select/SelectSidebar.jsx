@@ -56,6 +56,7 @@ const SelectSidebar = (props) => {
           title={props.intl.formatMessage(messages.choices)}
           required={true}
           value={choice}
+          description="Enter one value per line"
           onChange={(event, value) => {
             props.onChangeBlock(props.block, {
               ...props.data,
