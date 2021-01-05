@@ -51,6 +51,29 @@ Form Actions
 * https://www.smashingmagazine.com/2011/11/extensive-guide-web-form-usability/
 * Material Design Text fields (https://material.io/components/text-fields)
 
+## Features
+
+#### 1. Input block
+![Input block](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/input.gif)
+
+#### 2. Textarea block
+![Textarea block](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Textarea.gif)
+
+#### 3. Select block
+![Select block](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Select.gif)
+
+#### 4. Email block
+![Email block](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Email.gif)
+
+#### 5. Checkbox block
+![Checkbox block](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/checkbox.gif)
+
+#### 6. Adding Error Message
+![Adding Error Message](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Errormessage.gif)
+
+#### 7. Adding Placeholder 
+![Adding Placeholder](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Placeholder.gif)
+
 ## Books
 
 * Web Form Design: Filling in the Blanks (https://www.lukew.com/resources/web_form_design.asp)
