@@ -1,5 +1,5 @@
 ====================
-kitconcept.voltoformbuilder
+voltoformbuilder
 ====================
 
 User documentation

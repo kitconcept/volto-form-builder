@@ -7,7 +7,7 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
-import kitconcept.voltoformbuilder
+import voltoformbuilder
 
 
 class PlonevoltoformbuilderLayer(PloneSandboxLayer):
@@ -18,10 +18,10 @@ class PlonevoltoformbuilderLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        self.loadZCML(package=kitconcept.voltoformbuilder)
+        self.loadZCML(package=voltoformbuilder)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, "kitconcept.voltoformbuilder:default")
+        applyProfile(portal, "voltoformbuilder:default")
 
 
 KITCONCEPT_VOLTOFORMBUILDER_FIXTURE = PlonevoltoformbuilderLayer()

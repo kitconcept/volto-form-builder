@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the kitconcept.voltoformbuilder package."""
+"""Installer for the voltoformbuilder package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -15,7 +15,7 @@ long_description = "\n\n".join(
 
 
 setup(
-    name="kitconcept.voltoformbuilder",
+    name="volto-form-builder",
     version="1.0a1",
     description="Form Generator for the Plone CMS",
     long_description=long_description,
@@ -32,10 +32,9 @@ setup(
     keywords="Python Plone",
     author="kitconcept GmbH",
     author_email="info@kitconcept.com",
-    url="https://pypi.python.org/pypi/kitconcept.voltoformbuilder",
+    url="https://pypi.python.org/pypi/voltoformbuilder",
     license="GPL version 2",
     packages=find_packages("src", exclude=["ez_setup"]),
-    namespace_packages=["kitconcept"],
     package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
