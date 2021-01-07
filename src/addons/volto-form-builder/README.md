@@ -74,6 +74,10 @@ Form Actions
 #### 7. Adding Placeholder 
 ![Adding Placeholder](https://raw.githubusercontent.com/kitconcept/volto-form-builder/master/images/Placeholder.gif)
 
+## UX Principles
+
+* Use vertical form layout (add reference here...)
+
 ## Books
 
 * Web Form Design: Filling in the Blanks (https://www.lukew.com/resources/web_form_design.asp)
